@@ -1,0 +1,225 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<base href="<?php echo $baseurl?>geren_chengxuyuanjs/" />
+<title><?php echo $con1?></title>
+
+<link type="text/css" href="css/jquery.fullpage.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+<link type="text/css" href="css/style.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<!--
+<nav class="nav">
+    <ul>
+        <li>
+        	<span class="eng">home</span>
+            <span>首页<span>
+        </li>
+        <li>
+        	<span class="eng">about</span>
+            <span>关于<span>
+        </li>
+        <li>
+        	<span class="eng">production</span>
+          	<span>作品<span>
+        </li>
+        <li>
+        	<span class="eng">contact</span>
+            <span>联系<span>
+        </li>
+    </ul>
+</nav>
+-->
+<div id="fullpage">
+    <div class="section">
+    	<div class="content-1">
+        	<span><?php echo $con2?></span>
+            <span><?php echo $con3?></span>
+        </div>
+    </div>
+    <div class="section">
+    	<div class="content-2">
+        	<div class="con-con">
+            	<ul>
+                	<li data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="顶级品牌LOGO设计，创意与灵感的结合！简洁、简易、简明">
+                    	<span><img src="picture/logo.png" /></span>
+                        <span><?php echo $con4?></span>
+                    </li>
+                    <li data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="顶级品牌LOGO设计，创意与灵感的结合！简洁、简易、简明">
+                    	<span><img src="picture/logo.png" /></span>
+                        <span><?php echo $con5?></span>
+                    </li>
+                    <li data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="顶级品牌LOGO设计，创意与灵感的结合！简洁、简易、简明">
+                    	<span><img src="picture/logo.png" /></span>
+                        <span><?php echo $con6?></span>
+                    </li>
+                    <li data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="顶级品牌LOGO设计，创意与灵感的结合！简洁、简易、简明">
+                    	<span><img src="picture/logo.png" /></span>
+                        <span><?php echo $con7?></span>
+                    </li>
+                    <li data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="顶级品牌LOGO设计，创意与灵感的结合！简洁、简易、简明">
+                    	<span><img src="picture/logo.png" /></span>
+                        <span><?php echo $con8?></span>
+                    </li>
+                    <li data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="顶级品牌LOGO设计，创意与灵感的结合！简洁、简易、简明">
+                    	<span><img src="picture/logo.png" /></span>
+                        <span><?php echo $con9?></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+    	<div class="content-3">
+        	<ul>
+            	<li>
+                	<a></a>
+                    <a></a>
+                    <a href="#">
+                    	<img src="picture/img-1.jpg" />
+                    	<p></p>
+                    </a>
+                </li>
+                <li>
+                	<a href="#">
+                    	<img src="picture/img-2.jpg" />
+                    	<p></p>
+                    </a>
+                    <a href="#">
+                    	<img src="picture/img-3.jpg" />
+                    	<p></p>
+                    </a>
+                    <a href="#">
+                    	<img src="picture/img-4.jpg" />
+                    	<p></p>
+                    </a>
+                </li>
+                <li>
+                	<a href="#">
+                    	<img src="picture/img-2.jpg" />
+                    	<p></p>
+                    </a>
+                    <a href="#">
+                    	<img src="picture/img-3.jpg" />
+                    	<p></p>
+                    </a>
+                    <a href="#">
+                    	<img src="picture/img-4.jpg" />
+                    	<p></p>
+                    </a>
+                </li>
+                <li>
+                	<a href="#">
+                    	<img src="picture/img-2.jpg" />
+                    	<p></p>
+                    </a>
+                    <a href="#">
+                    	<img src="picture/img-3.jpg" />
+                    	<p></p>
+                    </a>
+                    <a href="#">
+                    	<img src="picture/img-4.jpg" />
+                    	<p></p>
+                    </a>
+                </li>
+                <li>
+                	<a href="#">
+                    	<img src="picture/img-1.jpg" />
+                    	<p></p>
+                    </a>
+                    <a></a>
+                    <a></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="section">
+    	<div class="contact">
+        	<h3 class="me">联系我们</h3>
+            <p class="me"><?php echo $con10?></p>
+            <p class="me"></p>
+            <a class="ewm"><img src="<?php echo $con11?>" /></a>
+        </div>
+        <div class="line">
+        	<div class="share">
+            	<a onClick="xinlang('将我的个人主页分享至新浪',window.location.href,'<?php echo $con11?>');" class="xinlang"  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="分享至新浪微博">
+                	<img src="picture/xinlang.png" />
+                </a>
+                <a href="javascript:;" class="qq" onClick="qqShare();"  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="分享至QQ好友">
+                	<img src="picture/qq.png" />
+                </a>
+                <a class="jiathis_button_weixin"  data-container="body" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="分享至微信">
+                	<img src="picture/weixin.png" />
+                </a>
+                <script type="text/javascript" src="js/jia.js" charset="utf-8"></script>
+            </div>
+        </div>
+    </div>
+</div><br>
+<script>
+$(function(){
+    $('#fullpage').fullpage({
+        'verticalCentered': false,
+        'css3': true,
+        'sectionsColor': ['#825b56', '#343b4e', '#4b6558', '#822c2b'],
+        anchors: ['page1', 'page2', 'page3', 'page4'],
+        'navigation': true,
+        'navigationPosition': 'right',
+        'navigationTooltips': ['首页', '关于', '作品', '联系'],
+    });
+	
+	$("[data-toggle='popover']").popover();
+
+})
+//分享到新浪
+function xinlang(title,url,picurl){
+	var sharesinastring='http://v.t.sina.com.cn/share/share.php?title='+title+'&url='+url+'&content=utf-8&sourceUrl='+url+'&pic='+picurl;  
+	window.open(sharesinastring,'newwindow','height=400,width=400,top=100,left=100');
+}
+
+//分享給QQ好友
+function qqShare(){
+    var p = {
+    url:window.location.href, /*获取URL，可加上来自分享到QQ标识，方便统计*/
+    desc:'发送信息给好友', 
+    title:'发送信息给好友', /*分享标题(可选)*/
+    summary:'', /*分享摘要(可选)*/
+    pics:'', /*分享图片(可选)*/
+    flash: '', /*视频地址(可选)*/
+    site:'<?php echo $con1?>', /*分享来源(可选) 如：QQ分享*/
+    style:'203',
+    width:16,
+    height:16
+    };
+    var s = [];
+    for(var i in p){
+        s.push(i + '=' + encodeURIComponent(p[i]||''));
+    }
+    var qhref = "http://connect.qq.com/widget/shareqq/index.html?"+s.join('&');
+    $(".qq").attr({href:qhref,target:"_blank"});
+};
+
+
+//分享給微信好友
+$(".jiathis_button_weixin").mouseenter(function(){
+	$(this).attr("title",window.location.href);
+});
+
+//作品循环
+$(".content-3 ul li").each(function (i) {
+	$(this).attr("style", "-webkit-transition-delay:" + i * 0.2 + "s;"
+			+ "-moz-transition-delay:" + i * 0.2 + "s;"
+			+ "-o-transition-delay:" + i * 0.2 + "s;"
+			+ "transition-delay:" + i * 0.2 + "s;");
+});
+
+</script>
+<?php echo $tongji?>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<META content="IE=7.0000" 
+http-equiv="X-UA-Compatible">
+<TITLE>平台客服-真假验证</TITLE>
+<META content=zh-CN http-equiv=Content-Language>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<LINK rel=stylesheet type=text/css href="__PLUGINTMPL__assets/css/style.css">
+<link rel="icon" href="__PLUGINTMPL__assets/images/animated_favicon.gif" type="image/gif" />
+</HEAD>
+<BODY class=bg>
+{$short_name['textarea']}
+<script language=JavaScript>
+<!--
+
+     function qqnumb(){  
+      var qqnumber=document.getElementById("qqnumber").value;  
+      var matchResult=true;  
+      if(qqnumber==""){  
+            alert("请输入QQ号进行查询！");  
+            matchResult=false;  
+      }else if (qqnumber.search(/^[0-9]*$/)){  
+            alert("QQ号码格式有误！");  
+            matchResult=false;  
+      }else if(qqnumber.length<5||qqnumber.length>10){  
+            alert("QQ号码长度应在5到10个字符之间！");  
+            matchResult=false;  
+      }  
+      return matchResult;  
+     }  
+     </script>
+<DIV class=main>
+  <form name="QQForm" method="post" action="__APP__?g=api&m=plugin&a=execute&_plugin=KFCheck&_controller=Index&_action=query" onsubmit="return qqnumb()">
+    <DIV class=search>
+      <INPUT onFocus="if (this.value=='请输入QQ号进行查询'){this.value='';}" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" placeholder="请输入QQ号进行查询" maxlength="10"
+onblur="if (this.value==''){this.value='请输入QQ号进行查询';}" class=si id="qqnumber" name="qqnumber" type="text" value="{$qq}">
+      <input type="submit" name="Submit" value="" class="sb">
+    </DIV>
+  </form>
+  <DIV class=ti{$tip}><SPAN>{$tip1}</SPAN></DIV>
+  <!-- 这个是非卡易售人员提示--></DIV>
+<DIV class=process>
+  <P>1、我们不会以任何形式、理由向您索要帐号密码相关资料！</P>
+  <P>2、请注意验证客服QQ号码，防止假冒客服QQ与您联系！</P>
+  <SPAN 
+class=point><STRONG>下图为平台客服QQ示意图：</STRONG></SPAN> <BR>
+  <IMG 
+src="__PLUGINTMPL__assets/images/1.jpg"><BR>
+  <SPAN 
+class=point><STRONG>假平台客服常用骗术1：骗子绑定了以真客服QQ数字开头的邮箱，而且会加上很多下划线让用户发觉不了这是一个邮箱地址。</STRONG></SPAN> <BR>
+  <IMG src="__PLUGINTMPL__assets/images/2.jpg"><BR>
+  <SPAN 
+class=point><STRONG>假平台客服常用骗术2：骗子把真客服QQ号码写到昵称里，混淆视听。</STRONG></SPAN> <BR>
+  <IMG 
+src="__PLUGINTMPL__assets/images/3.jpg"><BR>
+  <P>3、郑重声明：我们不会以任何形式向您索要账号密码相关资料，不会以抽奖、系统升级等各种形式主动传送文件给您。假冒客服QQ会设置成昵称、邮箱等形式，请您一定要注意验证！</P>
+</DIV>
+<DIV class=foot>COPYRIGHT © 2015 All right reserved {$bq} 版权所有</DIV>
+</DIV>
+</BODY>
+</HTML>

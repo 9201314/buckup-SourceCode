@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>{$site_name} {$site_seo_title}</title>
+
+<meta name="keywords" content="{$site_seo_keywords}" />
+
+<meta name="description" content="{$site_seo_description}" />
+
+<tc_include file="Public:head" />
+</head>
+
+
+
+<body>
+
+<tc_include file="Public:nav" />
+
+
+<div class="content">
+
+  	<div class="moban">
+
+   	  <p class="moban_p">{$post_title}</p>
+
+    	<div class="moban_con">
+
+        <div class="moban_left">   
+        
+        {$post_content}
+
+<div>
+
+</div></div>
+
+        <div class="moban_right">
+
+        <div class="moban_right_a">
+
+   	  <p>热门文章</p>
+
+        <a href=""><img src="__TMPL__Public/images/index_37.png" width="34" height="13" /></a>
+
+    	<div class="moban_right_a_content">
+
+        	<ul>
+
+  			   <php>$list = sp_sql_posts_paged("where:istop>0;order:post_date DESC;",15);</php>          
+
+             	 <volist name="list['posts']" id="vo">
+
+            	<li><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">{$vo.post_title}</a></li>
+                
+               </volist> 
+        
+
+            </ul>
+
+        </div>
+
+    </div>   <div class="moban_right_a">
+
+   
+
+    	<div class="moban_right_a_content">
+
+        </div>
+
+    	
+
+    </div>
+
+        <div class="moban_right_a" style=" margin-bottom:20px;">
+
+
+
+    	<div class="moban_right_a_content">
+
+
+
+        </div>
+
+    	
+
+    </div>
+
+        </div>
+
+        
+
+        </div>
+
+    </div>
+
+    <tc_include file="Public:link" />    
+
+    </div>
+
+
+<tc_include file="Public:footer" />
+<tc_include file="Public:scripts" />
+</body>
+
+</html>

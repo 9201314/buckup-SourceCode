@@ -1,0 +1,1 @@
+<div id="footer">Copyright &copy; <span style="color:#FF5200">2016-2017</span><span style="color:#0065FF"> 雅心有限公司</span> , Powered by <a href="http://www.晚安.我爱你" target="_blank">公爵旗舰店</a></div>

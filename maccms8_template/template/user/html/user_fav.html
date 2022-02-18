@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>收藏 -{maccms:name}</title>
+<link href="{maccms:path}template/user/css/css.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="{maccms:path}template/user/css/aui.css" />
+<link rel="stylesheet" href="{maccms:path}template/user/css/main.css" />
+<script type="text/javascript" src="{maccms:path}template/user/css/iconfont.js" ></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/home.js" ></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/main.js" ></script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<style type="text/css">
+    .icon {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+    .icono {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+      color:#212121;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+</style>
+<script>
+$(function(){
+	$("#btnClear").click(function(){
+		if(confirm('确定要清空记录吗')){
+			$("#form1").attr("action","index.php?m=user-del-flag-fav-clear-1.html");
+			$("#form1").submit();
+		}
+		else{return false}
+	});
+	$("#btnDel").click(function(){
+		if(checkCount('d_id[]')==0){
+			alert("请至少选择一个数据");
+			return;
+		}
+		if(confirm('确定要删除吗')){
+			$("#form1").attr("action","index.php?m=user-del-flag-fav.html");
+			$("#form1").submit();
+		}
+		else{return false}
+	});
+});
+</script>
+<script>
+function fuckyou(){
+      window.close(); //关闭当前窗口(防抽)
+     window.location="about:blank"; //将当前窗口跳转置空白页
+}
+  function ck() {
+    console.profile();
+    console.profileEnd();
+    //我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
+    if(console.clear) { console.clear() };
+                        if (typeof console.profiles =="object"){
+    return console.profiles.length > 0;
+                        }
+}
+function hehe(){
+if( (window.console && (console.firebug || console.table && /firebug/i.test(console.table()) )) || (typeof opera == 'object' && typeof opera.postError == 'function' && console.profile.length > 0)){
+  fuckyou();
+}
+if(typeof console.profiles =="object"&&console.profiles.length > 0){
+fuckyou();
+}
+}
+hehe();
+window.onresize = function(){
+if((window.outerHeight-window.innerHeight)>200)
+//判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
+   fuckyou();
+}
+</script>
+</head>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+<!-- 头部  -->
+<section class="header"style="margin-top: -2.2rem;">
+	<header class="aui-bar aui-bar-nav" id="aui-header">
+		<a class="aui-pull-left aui-btn" onclick="back();">
+			<span class="aui-iconfont aui-icon-left"></span>
+		</a>
+		<div class="aui-title">收藏中心</div>
+	   	<a href="/" class="aui-pull-right aui-btn" aui-popup-for="top-right" tapmode="">
+		<svg class="icono" aria-hidden="true">
+             <use xlink:href="#icon-imac1"></use>
+        </svg>
+		</a>
+	    <a onclick="openSearch()" class="aui-pull-right aui-btn">
+	       <svg class="icono" aria-hidden="true">
+             <use xlink:href="#icon-search"></use>
+        </svg>
+	    </a>
+	</header>
+</section>
+
+<div id="mainContent"style="margin-top: 2.2rem;">
+	<div class="usercenter-top">
+		<div class="usercenter-bg">
+			<div class="avatar-box">
+				<img class="user-avatar" src="/template/user/images/mrtx.jpg">
+			</div>
+			<p class="user-name">
+				<font color="#424242">{u_name}</font>
+			</p>
+		</div>
+		<div class="usercenter-count">
+			<a class="user-money" href="javascript:void(0)">
+				<p class="count">{u_points}</p>
+				<p class="title">我的积分</p>
+			</a>
+			<a class="user-packet" href="javascript:void(0)">
+				<p class="count">{ug_name}</p>
+				<p class="title">等级</p>
+			</a>
+			<a class="user-ticket" href="javascript:void(0)">
+				<p class="count">{u_flag}</p>
+				<p class="title">计费类型</p>
+			</a>
+		</div>
+	</div>
+
+	<div class="i-box-cnt" id="i-cnt">
+		<div id="i-profile">
+			<div class="ui-title i-tab-nav-box">
+				<ul class="i-tab-nav fn-clear">
+					<li>
+						<a href="javascript:void(0)" id="info_1" onclick="show(1)">收藏记录</a></li>
+					<li class="line"></li>
+					<li>
+						<a href="javascript:void(0)" id="info_2" onclick="show(2)">热门收藏</a></li>
+					<li class="line"></li>
+				</ul>
+			</div>
+			<div id="base_info">
+				<div class="ui-cnt">
+					<ul class="user-txt-list his-list fn-clear" id="xlist">
+					<form id="form1" name="form1" method="post">
+					 <!-- BEGIN row -->
+						<li class="">
+						<p class="title"><input name="d_id[]" type="checkbox" value="{d_id}">
+							<a target="_blank" href="{d_link}">{d_name}</a>/{t_name}
+						</p>
+						<p class="morelook">
+							<a target="_blank" href="{d_link}">重新观看</a>
+						</p>
+								
+						</li>
+					<!-- END row -->
+					</ul>		
+					<!-- // i-intro End -->
+					<div class="check-del fn-left">
+					<input class="ui-edit ui-edit-short" type="button" id="btnChkAll" value="全选" class="input" onClick="checkAll('d_id[]');">
+					<input class="ui-edit ui-edit-short"  type="button" id="btnChkOther" value="反选" class="input" onClick="checkOther('d_id[]');">
+					<input class="ui-edit ui-edit-short"  type="button" id="btnDel" value="删除" class="input" />
+					 <input class="ui-edit1 ui-edit-short cleanup" type="button" id="btnClear" value="清空" class="input">
+					</form>
+					</div>
+					<!-- // list-page End -->
+				</div>
+				
+				
+			</div>
+			<div class="ui-form" id="update_info" style="display:none;">
+				<div class="main">
+					<ul>{maccms:vod num=9 type=[matrix:id] order=desc by=time}
+						<li>
+							<a href="[vod:link]">
+								<div class="psize">
+									<img class="lazy" data-original="[vod:pic]" src="[vod:pic]" alt="[vod:name]">
+									<label class="title">{if-A:not isN("[vod:remarks]")}[vod:remarks]{elseif-A:[vod:state]=0 and "[vod:remarks]"=""}高清{endif-A}&nbsp;</label>
+								</div>
+								<p class="pname">[vod:name]</p>
+							</a>
+							<div class="user-todo">
+								<a class="ui-edit savelove fav-add" href="javascript:void(0)" onclick="MAC.UserFav('[vod:id]');return false;">收藏</a>
+							</div>
+						</li>{/maccms:vod}
+					</ul>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<script>function show(o) {
+			if (o == 1) {
+				$("#base_info").show();
+				$("#update_info").hide();
+				$("#info_1").css("color", "#ff6666");
+				$("#info_2").css("color", "");
+			} else {
+				$("#base_info").hide();
+				$("#update_info").show();
+				$("#info_1").css("color", "");
+				$("#info_2").css("color", "#ff6666");
+			}
+
+		}
+	</script>
+</div>
+{foot}
+</body>
+</html>

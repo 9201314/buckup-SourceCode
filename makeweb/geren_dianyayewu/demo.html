@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="<?php echo $baseurl?>geren_dianyayewu/" />
+
+<title><?php echo $con46?></title>
+<link rel="stylesheet" type="text/css" href="css/style_1.css"/>
+</head>
+
+<body>
+<!-- start header -->
+<div id="header" ><span><?php echo $con47?><br/>
+  <!-- end header --> 
+  
+  <!-- start box -->
+  <div class="box">
+    <h2><?php echo $con48?></h2>
+    <table width="100%" class="tb">
+      <tr>
+        <th width="500">业 务 名 称</th>
+        <th width="100">发 货 时 间</th>
+        <th width="100">销 售 价 格</th>
+        <th width="100">购 买 业 务</th>
+      </tr>
+      <tr>
+        <td colspan="5" class="td_class"><?php echo $con49?></td>
+      </tr>
+	  <?php for($i=0;$i<15;$i++){
+		if(${'con'.($i*3+3)}=='on'){
+		echo '<tr><td>'.${'con'.($i*3+1)}.'</td><td></td><td>'.${'con'.($i*3+2)}.'</td><td><a href="http://wpa.qq.com/msgrd?v=3&uin='.$con50.'&site=qq&menu=yes" target="_blank"><img src="picture/qq_1.png" /></a></td></tr>';
+		}
+		} ?>
+	  </table>
+  </div>
+  <!-- end container --> 
+  
+  <!-- start footer -->
+  
+  <div id="footer">
+    <p class="footer_p"><br/>
+      QQ号：<?php echo $con50?>—><a href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $con50?>&site=qq&menu=yes" target="_blank"><img src="picture/qq_1.png" /></a></p>
+  </div>
+</div>
+<?php echo $tongji?>
+</body>
+</html>

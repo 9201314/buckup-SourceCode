@@ -1,0 +1,41 @@
+ 
+
+    <div class="foot">Copyright © All Rights Reserved. 版权所有 {$site_name} | 技术支持：<a href="http://www.52ledao.com/" style="color: #c49664;">乐道工作室</a> </div>
+
+	<style type="text/css">
+	.scroll{
+		width:1px;
+		height:1px;
+		line-height:80px;
+		text-align:center;
+		position:fixed;
+		right:30px;
+		bottom:50px;
+		cursor:pointer;
+		font-size:14px;
+	}
+	</style>
+	<div class="scroll" id="scroll" style="display:none;">
+		<div class="backToTop" title="" style="display: block;"></div>
+	</div>
+	<script src="js/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		showScroll();
+		function showScroll(){
+			$(window).scroll( function() { 
+				var scrollValue=$(window).scrollTop();
+				scrollValue > 100 ? $('div[class=scroll]').fadeIn():$('div[class=scroll]').fadeOut();
+			} );	
+			$('#scroll').click(function(){
+				$("html,body").animate({scrollTop:0},200);	
+			});	
+		}
+	})
+	</script>
+
+<!--<body oncontextmenu="return false" onselectstart="return false">
+
+
+
+<noscript><iframe src="/*.html>";</iframe></noscript>-->

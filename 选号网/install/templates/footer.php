@@ -1,0 +1,1 @@
+<div class="footer"> &copy; 2015-<?php echo date("Y")?> <a href="http://www.52ledao.com" target="_blank">www.52ledao.com</a>乐道-奋斗之路工作室出品</div>

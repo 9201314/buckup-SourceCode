@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+
+
+<head>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<title>{$site_name} {$site_seo_title}</title>
+
+
+
+<meta name="keywords" content="{$site_seo_keywords}" />
+
+
+
+<meta name="description" content="{$site_seo_description}" />
+
+
+
+<tc_include file="Public:head" />
+
+</head>
+
+
+
+
+
+
+
+<body>
+
+
+
+<tc_include file="Public:nav" />
+
+
+
+
+
+
+
+<div class="content">
+
+
+
+<script type="text/javascript" src="__TMPL__Public/js/myfocus-2.0.4.min.js"></script>
+
+
+
+<script type="text/javascript">
+
+
+
+myFocus.set({id:'myFocusa',pattern:'mF_expo2010'});
+
+
+
+</script>
+
+
+
+
+
+
+<div class="Slide fl" id="slide">
+
+        <ul class="slide-cont">			   
+
+        
+
+        <php>$list = sp_sql_posts_paged("where:recommended>0;order:post_date DESC;",15);</php>
+
+ 		 <volist name="list['posts']" id="vo">       
+
+            <php>$smeta=json_decode($vo['smeta'],true);$sub=sub.$vo['tid'];</php> 
+
+            <li class="slide-item"> <a href="{:leuu('article/index',array('id'=>$vo['tid']))}" title="{$vo.post_title}" target="blank"><img src="__ROOT__/data/upload/{$smeta['photo']['0']['url']}" onerror='javascript:this.src="__TMPL__Public/images/sorry.jpg"' alt="" title=""   /></a>
+
+                <div class="slide-txt">
+
+                    <div class="txt_bg"></div>
+
+                    <a href="{:leuu('article/index',array('id'=>$vo['tid']))}"   target="_blank">{$vo.post_title}</a> </div>
+
+            </li>
+
+        </volist>              
+
+                    </ul>
+
+        <div class="slide-nav"> <a href="javascript:" class="nownav">1</a> <a href="javascript:">2</a> <a href="javascript:">3</a> <a href="javascript:">4</a> </div>
+
+        <div class="slide-loading"></div>
+
+
+
+    </div>
+
+
+
+<div class="top_right">
+
+
+
+	<div class="top_right_a">
+
+
+
+   	  <p>靓号站广告</p>
+
+
+
+        <a href="/index.php?m=list&a=index&id=1"><img src="__TMPL__Public/images/index_37.png" width="34" height="13" /></a>
+
+
+
+    	<div class="top_right_a_con">
+
+
+
+        	<ul>
+
+
+
+            
+
+            <php>
+
+                $adid='where:listorder=10000;';$ad=sp_get_terms($adid); 
+
+                 $adlist=sp_sql_posts_paged_bycatid($ad['0']['term_id'],"",10);
+
+            </php>
+
+ 			   <volist name="adlist['posts']" id="ad">          
+
+
+
+            	<li><a href="{:leuu('article/index',array('id'=>$ad['tid']))}">【{$ad.post_title}】</a></li>
+
+
+
+               </volist>   
+
+
+
+            
+
+
+
+            </ul>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="top_right_b">
+
+
+
+    	<img src="__TMPL__Public/images/index_24.png" width="9" height="131"  style=" float:left;"/>
+
+
+
+<span>
+
+
+
+
+
+
+
+<font>交易须知：</font><p>
+
+
+
+	承诺：所有货源正规来路，包真-包安-包售后-安全放心负责到底！
+
+
+
+</p>
+
+
+
+<p>
+
+
+
+	所有资源均是一手库存，无任何其他经手， {$site_name}诚信经营！
+
+
+
+</p>
+
+
+
+<p>
+
+
+
+	交易需谨慎谨防代码骗子，交易前请查看真伪确认是否是为正规客服
+
+
+
+</p>
+
+
+
+<p>
+
+
+
+	号码支持中介-当面-等安全方式，不支持的一律均视为骗子切勿轻信。
+
+
+
+</p></span>
+
+
+
+
+
+
+
+    	<img src="__TMPL__Public/images/index_28.png" width="9" height="131"  style=" float:right"/>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
+    <div class="qingchu"></div>
+
+
+
+	<div class="top_c">
+
+
+
+      <p>购买流程</p>
+
+
+
+    	<div class="top_c_con"><font>【选号】选好您所想要购买的商品。<br />
+
+
+
+【咨询】咨询在线客服查询物品信息。<br />
+
+
+
+【交易】确认无误后，付款交易到账发货。</font>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="top_d">
+
+
+
+    	<img src="__TMPL__Public/images/index_24.png" width="9" height="131"  style=" float:left;"/>
+
+
+
+<span>
+
+
+
+<p>
+
+
+
+	 {$site_name} 携程为您服务！感谢您的支持与信任。 {$site_name}一直秉承着信誉至上的原则，时刻关注市场最新活动动态，紧紧跟随市场，以优惠的价格赢得市场，一优质的售后保障客户切身利益！逐渐形成自己的客户群体，得到业界一致好评！<br />
+
+
+
+ 相信我们，因为我们更专业，因为我们更权威，买号首选{$site_name}！
+
+
+
+</p>
+
+
+
+<p>&nbsp;
+
+
+
+	
+
+
+
+</p>
+
+
+
+<p>
+
+
+
+	▪【好车开十年】&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▪【好号用一生】&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▪【靓号彰显尊贵】&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▪【极品伴随一生】
+
+
+
+</p>
+
+
+
+<p>
+
+
+
+	▪【用精品靓号】&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  ▪【展精彩人生】&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▪【你给予我信任】&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▪【我回馈你安全】
+
+
+
+</p></span>
+
+
+
+
+
+
+
+    	<img src="__TMPL__Public/images/index_28.png" width="9" height="131"  style=" float:right"/>
+
+
+
+    </div>
+
+
+
+    <div class="qingchu"></div>
+
+
+
+	<div class="main">
+
+
+
+   	  <p>主营业务</p>
+
+
+
+    	<div class="main_con">
+
+
+
+        
+
+
+
+        <php>$lists = sp_sql_posts_paged("cid:1;order:post_date DESC;",15);</php>            
+
+
+
+ 		<volist name="lists['posts']" id="vo">        
+
+
+
+        <font><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">
+
+
+
+         <h1>{$vo.post_title}</h1>
+
+
+
+         <b><!--乐道工作室 用心服务--></b></a>
+
+
+
+        </font>
+
+
+
+	    </volist>
+
+
+
+           
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+<tc_include file="Public:link" />    
+
+
+
+    </div>
+
+
+
+<tc_include file="Public:footer" />
+
+<tc_include file="Public:scripts" />
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,41 @@
+﻿
+    <!-- 七夕代码 -->
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+    <style>
+	 .qqanimate{display:block;position:fixed;left:150px;bottom:130px;z-index:99999}
+	 .shangxue{color: #FFF; background: #43BAFF; width: 200px; display: block; height: 45px; line-height: 45px; text-align: center; font-size: 15px; border-radius: 5px; margin: 0px auto; margin-top: 18px;}
+	 .shangxue:hover{background:#3AAEF1;} 
+	 .wan{margin-top:20px;background:#18DAAD;}
+	 .wan:hover{background:#13BB94;}
+	 .guanbi{background: url(js/close.png)no-repeat;width:40px;height:40px;position:absolute;right:-40px;top:-40px;}
+    </style>
+	 <div class="indexpingbi" style="display:none;z-index:999999999999;width:100%;height:100%;position:fixed;top:0px;left:0px;background:#000;filter: alpha(opacity=40);-moz-opacity: 0.4;-khtml-opacity: 0.4;opacity: 0.4;"></div>
+	 <div class="indextanchu" style="cursor:pointer;display:none;position: fixed;left:50%;margin-left:-400px;margin-top:-171px;top: 50%;width:800px;height:342px;z-index:9999999999999999;background:url(js/56d684f5395e8.png)no-repeat left center;">
+	 	<div style="width:400px;float:right;text-align:right;">
+	 		<p style="color:#FFF;font-size:32px;margin-top: 50px;">老铁 七夕节是不是快到了</p>
+	 		<p style="color:#FFF;line-height:35px;height:35px;font-size:28px;margin-top:20px;">再不买礼物，顺丰都救不了你</p>
+	 		<a href="http://weifenshi.com/index.php?r=l&kw=七夕" class="shangxue" target="_blank">给女友送点东西</a>
+	 		<a href="https://s.click.taobao.com/1dcsxcw" class="wan shangxue" target="_blank">算了 我没女友</a>
+        </div>
+        <a href="javascript:void(0)" class="guanbi"></a>
+	 </div>
+	 <script>
+                if(getCookie("qixi")!='true'){
+						$(".indexpingbi").css("display","block");
+						$(".indextanchu").css("display","block");
+					}
+                
+                $(".guanbi").live('click',function(e) {
+                    $(".indexpingbi").css("display","none");
+					$(".indextanchu").css("display","none");
+					setCookie1("qixi","true","d365");
+                });
+            	$(".shangxue").live('click',function(e) {
+                    $(".indexpingbi").css("display","none");
+					$(".indextanchu").css("display","none");
+                });
+     </script>
+</div>
+
+

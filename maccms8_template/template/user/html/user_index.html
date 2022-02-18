@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>会员中心 -{maccms:name}</title>
+<link href="{maccms:path}template/user/css/css.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="{maccms:path}template/user/css/aui.css" />
+<link rel="stylesheet" href="{maccms:path}template/user/css/main.css" />
+<script type="text/javascript" src="{maccms:path}template/user/css/iconfont.js" ></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/home.js" ></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/main.js" ></script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<style type="text/css">
+    .icon {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+    .icono {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+      color:#212121;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+</style>
+
+</head>
+
+
+<!-- 头部  -->
+<section class="header"style="margin-top: -2.2rem;">
+	<header class="aui-bar aui-bar-nav" id="aui-header">
+		<a class="aui-pull-left aui-btn" onclick="back();">
+			<span class="aui-iconfont aui-icon-left"></span>
+		</a>
+		<div class="aui-title">会员中心</div>
+	   	<a href="/" class="aui-pull-right aui-btn" aui-popup-for="top-right" tapmode="">
+		<svg class="icono" aria-hidden="true">
+             <use xlink:href="#icon-imac1"></use>
+        </svg>
+		</a>
+	    <a onclick="openSearch()" class="aui-pull-right aui-btn">
+	       <svg class="icono" aria-hidden="true">
+             <use xlink:href="#icon-search"></use>
+        </svg>
+	    </a>
+	</header>
+</section>
+
+<div id="mainContent"style="margin-top: 2.2rem;">
+	<div class="usercenter-top">
+		<div class="usercenter-bg">
+			<div class="avatar-box">
+				<img class="user-avatar" src="http://oi4n7b29n.bkt.clouddn.com/ttx.jpg">
+			</div>
+			<p class="user-name">
+				<font color="#424242">{u_name}</font>
+			</p>
+		</div>
+		<div class="usercenter-count">
+			<a class="user-money" href="javascript:void(0)">
+				<p class="count">{u_points}</p>
+				<p class="title">我的积分</p>
+			</a>
+			<a class="user-packet" href="javascript:void(0)">
+				<p class="count">{ug_name}</p>
+				<p class="title">等级</p>
+			</a>
+			<a class="user-ticket" href="javascript:void(0)">
+				<p class="count">{u_flag}</p>
+				<p class="title">计费类型</p>
+			</a>
+		</div>
+	</div>
+	<div class="usercenter-list">
+		<div class="usercenter-list-p1">
+			<div class="item-box">
+				<a class="list-item clearfix" href="index.php?m=user-info.html">
+					<span class="item-icon wode-icon"></span>
+					<span class="item-title">我的资料</span>
+					<span class="item-arrow"></span>
+					<span class="item-tips">修改资料</span>
+				</a>
+				<a class="list-item clearfix" href="index.php?m=user-fav.html">
+					<span class="item-icon shoucang-icon"></span>
+					<span class="item-title">我的收藏</span>
+					<span class="item-arrow"></span>
+					<span class="item-tips">我喜欢的</span>
+				</a>
+				<a class="list-item clearfix" href="index.php?m=user-plays.html">
+					<span class="item-icon bofang-icon"></span>
+					<span class="item-title">播放记录</span>
+					<span class="item-arrow"></span>
+					<span class="item-tips">我看过的</span>
+				</a><!-- 
+				<a class="list-item clearfix" href="index.php?m=user-downs.html">
+					<span class="item-icon down123-icon"></span>
+					<span class="item-title">下载记录</span>
+					<span class="item-arrow"></span>
+				</a> -->
+				<a class="list-item clearfix" href="index.php?m=user-pay.html">
+					<span class="item-icon chong-icon"></span>
+					<span class="item-title">充值中心</span>
+				    <span class="item-arrow"></span>
+				    <span class="item-tips">购买积分</span>
+				</a>
+					<a class="list-item clearfix" href="index.php?m=user-upgrade.html">
+					<span class="item-icon vip-icon"></span>
+					<span class="item-title">升级权限</span>
+					<span class="item-arrow"></span>
+					<span class="item-tips">升官发财</span>
+				</a>
+				
+					
+			
+				<!--	<a class="list-item clearfix" href="index.php?m=user-upgrade.html">       index.php?m=user-pay.html
+				
+					<span class="item-icon vip-icon"></span>
+					<span class="item-title">升级权限</span>
+					<span class="item-arrow"></span>
+					<span class="item-tips">检票上车</span>
+				</a>-->
+			<section class="mod-btn">
+					<a rel="nofollow" style="color:#fff;background-color:#FF6E76" href="index.php?m=user-logout.html">退出</a>
+				</section>
+			</div>
+		</div>
+	</div>
+
+</div>
+{foot}
+</body>
+</html>

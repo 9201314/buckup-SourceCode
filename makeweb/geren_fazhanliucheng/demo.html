@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<base href="<?php echo $baseurl?>geren_fazhanliucheng/" />
+
+<meta charset="utf-8">
+<title><?php echo $con1?></title>
+<meta name="keywords" content="<?php echo $con1?>"><!--关键词-->
+<meta name="description" content="<?php echo $con1?>"><!--描述-->
+<link rel="stylesheet" href="css/style.css">
+<style>
+p{
+color:#fff;
+font-size:15px;
+text-shadow: 0 0 10px #529DFF;
+}
+</style>
+</head>
+<body>
+<div class="wrap about_page" id="wrap">
+  <div class="wrapper">
+    <div class="header">
+      <div class="head">
+	  
+        <div class="logo_box"><h1 class="hide_txt"><a style=" color:#FFF; text-decoration:none;" href="<?php echo $con11?>" target="_blank">官方主页</a></h1></div>
+          <div class="nav_box">
+            <ul class="nav_list" id="nav_list">
+		 <li><a href="javascript:void(0);" onclick="play()" id="playbtn" class="btn_sound"></a></li>
+		 <li><a href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $con12?>&site=qq&menu=yes" target="_blank">联系我吧</a></li>
+            </ul>
+            <span class="ic_line" id="h_line"></span>
+          </div>
+      </div>
+    </div>
+    <div class="events_sec" id="events_sec">
+      <div class="content">
+        <h3 class="hide_txt png"><?php echo $con2?></h3>
+        <div class="events_list">
+          <span class="ic_time png"></span>
+          <ul>
+            <li class="right_li">
+              <span class="ic_events png"></span>
+              <p class="txt_events"><strong><?php echo $con3?></strong></p>
+            </li>
+            <li class="left_li">
+              <span class="ic_events"><i class="png"></i></span>
+              <p class="txt_events"><strong><?php echo $con4?></strong></p>
+            </li>
+            <li class="right_li">
+              <span class="ic_events png"></span>
+              <p class="txt_events"><strong><?php echo $con5?></strong></p>
+            </li>
+            <li class="left_li">
+              <span class="ic_events"><i class="png"></i></span>
+              <p class="txt_events"><strong><?php echo $con6?></strong></p>
+            </li>
+            <li class="right_li">
+              <span class="ic_events png"></span>
+              <p class="txt_events"><strong><?php echo $con7?></strong></p>
+            </li>
+            <li class="left_li">
+              <span class="ic_events"><i class="png"></i></span>
+              <p class="txt_events"><strong><?php echo $con8?></strong></p>
+            </li>
+          </ul>
+          <span class="ic_arr png"></span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="wage_sec" id="wage_sec">
+      <div class="content">
+        <h3 class="tt_bg">网站介绍</h3>
+		<center>
+<p><?php echo $con9?></p>
+<p><?php echo $con10?></p>
+<br><br><br>
+		</center>
+		<br><br><br>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<audio id="audios" controls autoplay="autoplay" class="audio" style="display:none;"></audio>
+
+<script>
+var url=["<?php echo $con13?>","<?php echo $con13?>"];
+var num = GetRandomNum(0,url.length-1);   
+document.getElementById("audios").src="http://"+url[num];
+function GetRandomNum(Min,Max)
+{
+var Range = Max - Min;   
+var Rand = Math.random();   
+return(Min + Math.round(Rand * Range));   
+}   
+
+function play(){
+var div = document.getElementById('playbtn'); 
+var obj=document.getElementById("audios");
+if(obj.paused){
+obj.play();
+div.setAttribute("class", "btn_sound"); 
+}else{
+obj.pause();
+div.setAttribute("class", "btn_sound btn_no_sound"); 
+}
+
+}
+</script>
+<script src="js/canvas-nest.min.js"></script>
+<?php echo $tongji?>
+</body>
+</html>

@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* 代码整理：懒人之家 www.lanrenzhijia.com */
+html {
+	-webkit-text-size-adjust:none;
+}
+*html .lanrenzhijia {
+	position:absolute;
+}
+.lanrenzhijia {
+	width:124px;
+}
+.lanrenzhijiashow {
+	right:0;
+}
+.lanrenzhijia .lanrenzhijia a {
+}
+.lanrenzhijia a:hover {
+	color:#B50708;
+}
+h1 {
+	text-align:center;
+}
+.lanrenzhijia .lanrenzhijia_box {
+	background-color:#009EE8;
+	padding:6px;
+	border-radius:4px;
+}
+.lanrenzhijia .lanrenzhijia_header, .lanrenzhijia .lanrenzhijia_con, .lanrenzhijia .lanrenzhijia_tool a {
+	background-color:#fff;
+	margin-top:4px;
+	border-radius:4px;
+}
+.lanrenzhijia .lanrenzhijia_header, .lanrenzhijia .lanrenzhijia_con {
+	margin-top:0;
+}
+.lanrenzhijia .lanrenzhijia_btn {
+	background-color:#009EE8;
+	color:#fff;
+	border-radius:4px 0 0 4px;
+}
+.lanrenzhijia .lanrenzhijia_btn:hover {
+	background-color:#009EE8;
+	color:#fff;
+}
+/* 代码整理：懒人之家 www.lanrenzhijia.com */

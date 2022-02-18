@@ -1,0 +1,20 @@
+<php>$links=sp_getlinks();</php>
+<if condition="$links">
+<div class="main_lianjie">
+
+   	  <p>友情链接</p>
+
+    	<div class="main_lianjie_con">
+
+        <ul>
+
+                <foreach name="links" item="vo">
+                <a href="{$vo.link_url}" target="{$vo.link_target}">{$vo.link_name}</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                </foreach>
+
+        </ul>
+
+        </div>
+
+    </div>
+    <else /></if>

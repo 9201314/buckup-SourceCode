@@ -1,0 +1,21 @@
+﻿@charset "utf-8";
+/* CSS 小彬网络原创 QQ号/QQ群：49553941 同一号码 */
+*{ margin:0px; padding:0px; border:0px; color:#FFF;font-family:"微软雅黑"; font-size:22px;}
+body{ margin:0px; background-color:#000}
+#main{ width:100%;margin:auto; text-align:center;}
+#main div{ margin:10px 0px;}
+#main .img{ margin-top:0px;}
+#main .top{ background-color:#333;}
+#main .pay{ background-color:#333;}
+#main .pay table .spmc{ width:40%}
+#main .pay table .spjg{width:15%}
+#main .pay table .zffs{width:15%}
+#main .pay table .qwrz{width:15%}
+#main .pay table .gmlx{width:15%}
+#main .pay table td{  border:#CCC solid 1px; padding:2px; height:40px;  }
+#main .pay table .rz img{ width:20px; height:20px;}
+#main .pay table .rz span{ font-size:15px; line-height:20x;vertical-align:top}
+#main .pay table .jg span{ font-size:14px;}
+#main .pay table td .hot{ font-size:9px; position:relative; top:-8px; background-color:#F00;border-radius:4px;height:10px; padding:0px 1px; }
+#main .mp3{ text-align:center;}
+#main .foot span{ font-size:14px; }

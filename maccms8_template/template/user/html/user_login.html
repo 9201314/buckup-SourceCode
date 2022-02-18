@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>{maccms:name} - 用户登录 </title>
+<link href="{maccms:path}template/user/css/css.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="{maccms:path}template/user/css/aui.css" />
+<link rel="stylesheet" href="{maccms:path}template/user/css/main.css" />
+<script type="text/javascript" src="{maccms:path}template/user/css/iconfont.js" ></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/home.js" ></script>
+<script type="text/javascript" src="/template/Joeleo/js/main.js" ></script>
+<script type="text/javascript" src="/template/Joeleo/js/common.js" ></script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<style type="text/css">
+    .icon {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+    .icono {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+      color:#212121;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+     
+}
+</style>
+
+
+</head>
+
+<!-- 头部  -->
+
+
+
+
+
+<section class="col-main"  style="margin-top: 0rem;margin-bottom: 0rem;">
+		<div class="row">
+
+    <div style="width: 100%;height:90px;display: block;background-image:url({maccms:path}template/user/images/logo.png);background-position: 50% 0px;background-repeat: no-repeat;margin-top: 3.5rem;"><a href="/"></a></div> 
+    
+	<form id="loginform_web" method="post" action="index.php?m=user-check.html">
+		<div data-node="loginPanel" class="mod-login" data-user="login" style="display: block;">
+			<!-- 登录信息 登录需要 m-loginReg追加类名称 m-login-->
+			<section class="m-loginReg m-login" data-component="page.login.component.login" data-id="page.login.component.login_25">
+				<div class="input-wrap">
+				   <div class="imnn"><i class="aui-iconfont aui-icon-my"></i></div>
+					<input class="loginReg-input" type="text" placeholder="请输入用户名" id="u_name" name="u_name" data-node="username" data-user-input="username" onblur="check(this)">
+				
+				</div>
+				<div class="input-wrap">
+				     <div class="imnn"><i class="aui-iconfont aui-icon-lock"></i></div>
+					<input class="loginReg-input" type="password" placeholder="请输入密码" id="u_password" name="u_password"  data-node="password" data-user-input="password" onblur="check(this)">
+				</div>
+				
+				<!-- 错误提示若无内容则只删除，保留容器 -->
+				<div class="error-tip">
+					<span data-node="verifyCodeError" id="verifyCodeError" style="display:none;"></span>
+				</div>
+				<!-- 错误提示若无内容则只删除，保留容器 end-->
+				
+				
+				<div class="btn-wrap">
+					<a href="javascript:void(0)" data-node="loginBtn" data-rseat="608082_signin" id="btnLogin" data-user-btn="login" class="c-btn c-btn-block c-btn-loginReg">登&nbsp;&nbsp;录</a>
+				</div>
+				<div class="reg-pw">
+					<a href="index.php?m=user-reg.html" class="c-reg" data-node="toRegister">注册账号</a>
+					<a data-node="forgetPassword" href="index.php?m=user-findpass.html" class="c-pw">忘记密码?</a>
+				</div>
+			</section>
+			<!-- 第三方登录 -->
+                <section class="m-other-login" data-component="page.login.component.thirdPartyLogin" data-id="page.login.component.thirdPartyLogin_26">
+                    <div data-node="thirdPartyTitle" class="c-title" style="display: block;">第三方账号登录</div>
+                    <a href="/index.php?m=user-reg-ref-qqlogin.html"><img style="height:50px;" src="/template/user/images/qq_login.png" alt=""></a>
+                </section>
+                <!-- 第三方登录 end-->
+		</div>
+	</form>
+		</div>
+	</section>
+
+
+
+<!-- js加载-->
+{foot}
+<script type="text/javascript">
+$(function(){	
+	$("body").bind('keyup',function(event) {
+		if(event.keyCode==13){ $('#btnLogin').click(); }
+	}); 
+	$('#btnLogin').click(function() {
+		if ($('#u_name').val()  == '') { alert('请输入用户！'); $("#u_name").focus(); return false; }
+		if ($('#u_password').val()  == '') { alert('请输入密码！'); $("#u_password").focus(); return false; }
+		$("#form1").submit();
+	});
+});
+</script>
+<script type="text/javascript">
+        $('#btnLogin').click(function() {
+		if ($('#u_name').val()  == '') { $("#verifyCodeError").show();$("#verifyCodeError").html("请输入用户名"); $("#u_name").focus(); return false; }
+		if ($('#u_password').val()  == '') { $("#verifyCodeError").show();$("#verifyCodeError").html("请输入密码"); $("#u_password").focus(); return false; }
+		$("#loginform_web").submit();
+	});
+	function check(o){
+		var value=$(o).val();
+		var id=$(o).attr("id");
+		if(value==""){
+			$("#verifyCodeError").show();
+			if(id=="u_name"){
+			$("#verifyCodeError").html("请输入用户名!");
+			}else if(id=="u_password"){
+			$("#verifyCodeError").html("请输入密码!");
+			}
+		}else{
+		$("#verifyCodeError").hide();
+		$("#verifyCodeError").html("");
+		}
+	}
+	$(function(){	
+	$("body").bind('keyup',function(event) {
+		if(event.keyCode==13){ $('#btnLogin').click(); }
+	}); 
+	
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<admintpl file="header"/>
+<body class="J_scroll_fixed">
+<div class="wrap J_check_wrap">
+  <ul class="nav nav-tabs">
+     <li class="active"><a>客服QQ管理</a></li>
+  </ul>
+  <div class="common-form">
+  <div class="well">
+  <if condition="!$db_type">
+  <p>
+  <b>当前登录管理员id:</b>{$adminid|default='管理员未登录'}&nbsp;&nbsp;&nbsp;
+  <b>数据库扩展状态:</b>{$db_type|default='<a href="__APP__?g=api&m=plugin&a=execute&_plugin=KFCheck&_controller=AdminIndex&_action=db" title="点此添加插件数据表" style="color: #BC1A1A;text-decoration: none;">未开启,点击开启</a>'}&nbsp;&nbsp;&nbsp;
+  </p>
+  <else />
+  <p>
+  <b>当前登录管理员id:</b>{$adminid|default='管理员未登录'}&nbsp;&nbsp;&nbsp;
+  <b>数据库扩展状态:</b>{$db_type|default='<a href="__APP__?g=api&m=plugin&a=execute&_plugin=KFCheck&_controller=AdminIndex&_action=db" title="点此添加插件数据表" style="color: #BC1A1A;text-decoration: none;">未开启,点击开启</a>'}&nbsp;&nbsp;&nbsp;
+  <b>客服总人数:</b>{$count|default='未添加'}&nbsp;&nbsp;&nbsp;
+  </p>
+  <p>
+  <b>客服验证地址:</b><a href="__APP__?g=api&m=plugin&a=execute&_plugin=KFCheck&_controller=Index&_action=index" target="_blank">__APP__?g=api&m=plugin&a=execute&_plugin=KFCheck&_controller=Index&_action=index</a>
+  </p>
+  <form name="QQForm" method="post" action="index.php?g=api&m=plugin&a=execute&_plugin=KFCheck&_controller=AdminIndex&_action=add" onSubmit="return qqnumb()">
+  <input type="text" class="input length_2" name="qquser" style="width:200px;" value="" placeholder="请输入客服昵称">
+  <input type="text" class="input length_2" name="qqnumber" style="width:200px;" value="" placeholder="请输入客服QQ">
+  <button class="btn btn-primary" style="margin-bottom: 10px;" name="Submit">添加</button>
+  </form>
+  </if>
+  </div>
+    <form method="post" class="J_ajaxForm" action="#">
+      <div class="table_list">
+	    <table width="100%" class="table table-hover">
+	        <thead>
+	          <tr>
+	            <th>客服昵称</th>
+	            <th>QQ号码</th>
+	            <th>添加时间</th>
+	            <th width="120">操作</th>
+	          </tr>
+	        </thead>
+	        <tbody>
+	        	<foreach name="users" item="vo">
+	        	<tr>
+		            <td>{$vo.qquser}</td>
+		            <td>{$vo.qqnumber}</td>
+		            <td>{$vo.time}</td>
+		            <td>
+			            <a href="index.php?g=api&m=plugin&a=execute&_plugin=KFCheck&_controller=AdminIndex&_action=delete&id={$vo.id}">删除</a>
+			        </td>
+	          	</tr>
+	          	</foreach>
+			</tbody>
+	      </table>
+  		</div>
+    </form>
+  </div>
+</div>
+<script src="__ROOT__/statics/js/common.js?"></script>
+</body>
+</html>

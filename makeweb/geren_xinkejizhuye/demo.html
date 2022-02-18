@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<base href="<?php echo $baseurl?>geren_xinkejizhuye/" />
+
+<title><?php echo $con1?></title>
+<link rel="stylesheet" href="//www.bootcss.com/p/buttons/css/buttons.css">
+<link rel="stylesheet" href="css/ionicons.min.css">
+<script src="js/modernizr.touch.js"></script>
+<link href="css/mfb.css" rel="stylesheet">
+<script src="js/modernizr.touch.js"></script>
+<style type="text/css">
+body{cursor:url(../images/default.cur),default;}
+a:hover,li:hover,img:hover{cursor:url(../images/link.cur),pointer;}
+</style>
+<style>
+*{margin: 0;padding: 0;}
+#container {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+#output {
+	width: 100%;
+	height: 100%;
+}
+.color{
+	width: 120px;
+	height: 20px;
+	margin: 0 auto;
+	position: fixed;
+	left: 50%;
+	margin-left: -60px;
+	bottom: 20px;
+}
+.cs{
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	position: absolute;
+	text-align:center;
+}
+.color li{
+	float: left;
+	margin: 0 5px;
+	width: 20px;
+	height: 20px;
+	background: #ccc;
+	box-shadow: 0 0 4px #FFF;
+	list-style: none;
+	cursor: pointer;
+}
+.color li:nth-child(1){
+	background: #002c4a;
+}
+.color li:nth-child(2){
+	background: #35ac03;
+}
+.color li:nth-child(3){
+	background: #ac0908;
+}
+.color li:nth-child(4){
+	background: #18bbff;
+}
+img#logo {
+    width: 128px;
+    background-size: cover;
+    border-radius: 200px;
+    box-shadow: 0px 0px 40px rgba(63, 81, 181, 0.72);
+    border: 3px solid #00a0ff;
+    opacity: 1;
+    margin: 0 auto;
+    margin-top: 20px;
+	margin-bottom: 20px;
+	transition: all 1.0s;  
+}
+#logo:hover {
+    box-shadow: 0 0 10px #fff;
+    -webkit-box-shadow: 0 0 19px #fff;
+    transform:rotate(360deg);
+    -ms-transform:rotate(360deg); 	/* IE 9 */
+    -moz-transform:rotate(360deg); 	/* Firefox */
+    -webkit-transform:rotate(360deg); /* Safari 和 Chrome */
+    -o-transform:rotate(360deg); 	/* Opera */
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+</style>
+<script src="js/jquery.js"></script>
+<script src="js/vector.js"></script>
+<script>
+$(function(){
+	// 初始化 传入dom id
+	var victor = new Victor("container", "output");
+	var theme = [
+			["#002c4a", "#005584"],
+			["#35ac03", "#3f4303"],
+			["#ac0908", "#cd5726"],
+			["#18bbff", "#00486b"]
+		]
+	$(".color li").each(function(index, val) {
+		var color = theme[index];
+		 $(this).mouseover(function(){
+			victor(color).set();
+		 })
+	});
+});
+</script>
+<link href="//cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="container"><div id="output"></div></div>
+<div class="cs">
+<img src="<?php echo $con2?>" id="logo"><br><br><br><br><br><br>
+<a href="http://<?php echo $con3?>.qzone.qq.com/" class="button button-glow button-rounded button-caution" target="_blank"><i class="fa fa-star"></i>我的空间</a>
+<a href="http://user.qzone.qq.com/<?php echo $con3?>/334" class="button button-glow button-rounded button-highlight" target="_blank"><i class="fa fa-header"></i>空间留言</a>
+<a href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $con3?>" class="button button-glow button-rounded button-royal" target="_blank"><i class="fa fa-qq"></i>联系客服</a>
+<button class="button button-large button-plain button-border button-circle"><i class="fa fa-thumbs-up"></i></button>
+<ul class="color">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+</div>
+
+<audio autoplay="autoplay" loop>
+	<source src="<?php echo $con4?>" type="audio/mpeg">
+</audio>
+<?php echo $tongji?>
+</body>
+</html>

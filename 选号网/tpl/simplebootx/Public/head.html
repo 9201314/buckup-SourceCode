@@ -1,0 +1,75 @@
+<style type="text/css">
+a:link { text-decoration: none !important;}
+a:visited { text-decoration: none !important;}
+a:hover { text-decoration: none !important;}
+a:active { text-decoration: none !important;}
+</style>
+<link href="__TMPL__Public/css/ng.css" rel="stylesheet" type="text/css" />
+
+<link href="__TMPL__Public/css/chinaz.css" type="text/css" rel="stylesheet">
+
+<script type="text/javascript" src="__TMPL__Public/js/jquery-1.3.2.min.js"></script>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  $(".kefu_a").click(function(){
+
+  $(".kefu").animate({left:"-161px"});$(".yinyue").animate({right:"-161px"});
+
+  });
+
+  $(".kefu_b").click(function(){
+
+  $(".kefu").animate({left:""});$(".yinyue").animate({right:""});
+
+  });
+
+  $(".yinyue_a").click(function(){
+
+  $(".kefu").animate({left:"-161px"});$(".yinyue").animate({right:"-161px"});
+
+  });
+
+  $(".yinyue_b").click(function(){
+
+  $(".kefu").animate({left:""});$(".yinyue").animate({right:""});
+
+  });
+
+});
+
+(function() {
+
+    var $backToTopTxt = "", $backToTopEle = $('<div class="backToTop"></div>').appendTo($("body"))
+
+        .text($backToTopTxt).attr("title", $backToTopTxt).click(function() {
+
+            $("html, body").animate({ scrollTop: 0 }, 120);
+
+    }), $backToTopFun = function() {
+
+        var st = $(document).scrollTop(), winh = $(window).height();
+
+        (st > 0)? $backToTopEle.show(): $backToTopEle.hide();    
+
+        //IE6下的定位
+
+        if (!window.XMLHttpRequest) {
+
+            $backToTopEle.css("top", st + winh - 166);    
+
+        }
+
+    };
+
+    $(window).bind("scroll", $backToTopFun);
+
+    $(function() { $backToTopFun(); });
+
+})();
+
+
+
+</script>

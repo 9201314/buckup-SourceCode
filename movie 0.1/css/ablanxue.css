@@ -1,0 +1,26 @@
+/* css document */
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,li,form,img,dl,dt,dd,table,th,td,blockquote,fieldset,div,strong,label,em{margin:0;padding:0;border:0;}
+ul,ol,li{list-style:none;}
+input,button{margin:0;font-size:12px;vertical-align:middle;}
+body{font-size:12px;font-family:arial, helvetica, sans-serif;  text-align:center; margin:0 auto;}
+table{border-collapse:collapse;border-spacing:0;}
+a{ text-decoration:none; color:#333;}
+.box_163css{ margin:20px auto; text-align: left; overflow: hidden; zoom: 1; position: relative}
+.box_163css ul {margin: 0px; overflow: hidden;  zoom: 1; height:400px}
+.box_163css ul li {display: block; position: relative;border: #ccc 1px solid; float: left; width:680px; text-align: center}
+.box_163css ul li img{ height: 680px; width: 400px;}
+.box_163css ul li a{display: block}
+.box_163css ul li .a_title{left:2px; text-decoration: underline; color: #53b8d7; font-size: 14px;  position: absolute; top: 281px}
+.frame { overflow: hidden; width:1290px;}
+.point-ctrl {right: 10px; position: absolute; top:234px}
+.left-point {background: url(../images/ui_slider_ctrl.png); filter: alpha(opacity=70); float: left; width: 54px; height: 32px}
+.right-point {background: url(../images/ui_slider_ctrl.png); filter: alpha(opacity=70); float: left; width: 54px; height: 32px}
+.left-point {background-position: 0px 0px}
+.left-point:hover {background-position: 0px -33px}
+.right-point {background-position: right 0px; width: 53px}
+.right-point:hover {background-position: right -33px}
+.controller { position: absolute; right: 2px; top: 275px;}
+.controller a {display: inline-block; margin: 0px 8px; color: #999; line-height: 24px; height: 24px; text-align: center; text-decoration: none}
+.controller a:hover {color: #2dc5ff}
+.controller .moko-slider-on {color: #2dc5ff}
+.controller .moko-slider-on:hover {color: #2dc5ff}

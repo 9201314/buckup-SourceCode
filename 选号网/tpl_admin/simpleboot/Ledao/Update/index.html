@@ -1,0 +1,82 @@
+<admintpl file="header"/>
+<link href="__ROOT__/statics/simpleboot/themes/flat/theme.min.css" type="text/css">
+<style>
+.home_info li em {
+float: left;
+width: 100px;
+font-style: normal;
+}
+li {
+list-style: none;
+}
+
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <div id="home_toptip"></div>
+  <h4 class="well">系统升级</h4>
+  <div class="home_info">
+    <ul>
+      <li> 
+       <em>商业版本类型</em> 
+      <span>乐道选号网（推广版）  [<a href="http://www.52ledao.com">立即升级</a>]</span></li>
+    </ul>
+  </div>
+  <h4 class="well">选择升级包</h4>
+  <div class="home_info">
+<div class="common-form">
+    <form action="/xhw/index.php?g=Admin&amp;m=backup&amp;a=import" method="post">
+    	<div class="table_list">
+    	<table width="100%" cellspacing="0" class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th align="left">升级包名称</th>
+                    <th>文件大小</th>
+                    <th>上传时间</th>
+                    <th>管理操作</th>
+                </tr>
+            </thead>
+            <if condition="$files">
+        	<tbody>
+            <volist name="files" id="vo">
+            <tr class="collapsed">
+            <php>  
+            $file = str_replace('\\', '/', (getcwd())) . '/' .  'update' . '/' . $vo['zipname']; 
+            $perms = stat($file);
+            $tiem = $perms['10'];
+            $date=date('Y-m-d H:i:s',"$tiem")
+            </php>
+                <td>{$vo.zipname}</td>
+                <td>{$perms['7']}kb</td>
+                <td>{$date}</td>
+                <td>
+                    <a href="{:U('Update/delete',array('name'=>$vo['zipname']))}" class="J_ajax_del">删除</a> | 
+                    <a href="{:U('Update/update',array('name'=>$vo['zipname']))}" class="J_ajax_dialog_btn" data-msg="确定升级吗？">升级</a>
+                </td>
+            </tr>
+            </volist>
+           </tbody>  
+              <else />
+        	<tbody>
+            <tr class="collapsed">
+                            <td colspan="4">没有待升级的安装包<a href="/xhw/index.php?g=Admin&amp;m=backup&amp;a=import&amp;backup=20150814_1" class="J_ajax_dialog_btn" data-msg="确定升级吗？"></a>                </td>
+              </tr>           </tbody>
+            </if>
+        </table>
+        </div>
+    </form>
+    </div>
+  </div>
+  <h4 class="well">上传升级包</h4>
+  <div class="home_info">
+        <form class="well form-search" action="{:U('Update/upload')}" enctype="multipart/form-data" method="post" >
+        选择升级包： 
+        <input type="file" name="photo" />
+        <input type="submit" value="提交" class="btn">
+        </form>
+  </div>
+</div>
+</body>
+</html>

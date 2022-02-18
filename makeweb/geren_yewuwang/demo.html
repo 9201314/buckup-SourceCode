@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="<?php echo $baseurl?>geren_yewuwang/" />
+
+<title><?php echo $con46?></title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<link rel="stylesheet" type="text/css" href="css/lrtk.css"/>
+<script type="text/javascript" src="js/lrtk.js"></script>
+<style type="text/css">
+.cs_img  {background:#FFF; margin:10px; }
+.cs_img img {width:100px; height:100px; }
+</style>
+</head>
+
+<body>
+    <div id='cs_box'>
+        <span class='cs_title'>在线咨询</span>
+        <span class='cs_close'>x</span>
+        <div class='cs_img'><img src="<?php echo $con48?>" /></div>
+        <span class='cs_info'>有什么可以帮到你</span>
+        <div class='cs_btn'>点击咨询</div>
+    </div>
+    <script type="text/javascript">
+        myEvent(window,'load',function(){
+            cs_box.set({
+                img_path : '<?php echo $con48?>',	//设置图片路径
+                qq : '<?php echo $con50?>',	//设置QQ号码
+            });
+        });
+    </script>
+	<div id="main">
+    	<div class="img"> <img src="<?php echo $con47?>" width="100%" /></div>
+		<div class="top">
+			<marquee scrollAmount=15><h3><?php echo $con49?></h3></marquee>
+    	</div>
+        <div class="pay">
+        	<table width="100%" cellspacing="0">
+            	<tr><th class="spmc">商品介绍</th><th class="spjg">商品价格</th><th class="zffs">支付方式</th><th class="qwrz">权威认证</th><th class="gmlx">购买联系</th></tr>
+				<?php for($i=0;$i<15;$i++){
+				if(${'con'.($i*3+3)}=='on'){
+					echo '<tr><td>'.${'con'.($i*3+1)}.'<span class="hot">HOT</span></td><td class="jg">'.${'con'.($i*3+2)}.'<span>元</span></td><td><img src="picture/zf.png"/></td><td class="rz"><img src="picture/rz.png"/><span>官方认证</span></td><td><a href="http://wpa.qq.com/msgrd?v=3&uin='.$con50.'&site=qq&menu=yes" target="_blank"><img src="picture/qq.png" /></a></td></tr>';
+					}
+				} ?>
+			</table>
+        </div>
+        <div class="mp3">
+			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=<?php echo $con51?>&auto=1&height=32"></iframe>
+        </div>
+        <div class="foot">
+        	<span><?php echo $con52?></span>
+        </div>
+	</div> 
+	<?php echo $tongji?>
+</body>
+</html>

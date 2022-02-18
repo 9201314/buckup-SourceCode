@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>{$site_name} {$site_seo_title}</title>
+
+<meta name="keywords" content="{$site_seo_keywords}" />
+
+<meta name="description" content="{$site_seo_description}" />
+
+<tc_include file="Public:head" />
+</head>
+
+
+
+<body>
+
+<tc_include file="Public:nav" />
+
+
+
+<div class="content">
+
+<script type="text/javascript" src="__TMPL__Public/js/myfocus-2.0.4.min.js"></script>
+
+<script type="text/javascript">
+
+myFocus.set({id:'myFocusa',pattern:'mF_expo2010'});
+
+</script>
+<div class="main">
+
+    <p>{$name}</p>
+
+    	<div class="main_con">
+
+ 	<php>$lists = sp_sql_posts_paged("cid:$cat_id;order:post_date DESC;",6);echo strtotime('{$vo.post_date}');</php>	       
+
+     
+	<volist name="lists['posts']" id="vo">  
+        <font><a href="{:leuu('article/index',array('id'=>$vo['tid']))}">
+
+        <h1>{$vo.post_title}</h1>
+
+         <b><!--乐道工作室 用心服务--></b></a>
+
+        </font>
+    </volist> 
+
+           
+
+<script type="text/javascript" src="other/o.php?sid=1253507105"></script>
+
+        </div>
+
+    </div>
+
+    <tc_include file="Public:link" />    
+
+    </div>
+
+<tc_include file="Public:footer" />
+<tc_include file="Public:scripts" />
+</body>
+
+</html>

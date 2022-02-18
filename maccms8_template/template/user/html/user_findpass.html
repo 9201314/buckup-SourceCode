@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>找回密码 -{maccms:name}</title>
+<link href="{maccms:path}template/user/css/css.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="{maccms:path}template/user/css/aui.css" />
+<link rel="stylesheet" href="{maccms:path}template/user/css/main.css" />
+<script type="text/javascript" src="{maccms:path}template/user/css/iconfont.js" ></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/home.js" ></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/main.js" ></script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<style type="text/css">
+    .icon {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+    .icono {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+      color:#212121;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+</style>
+<script>
+function fuckyou(){
+      window.close(); //关闭当前窗口(防抽)
+     window.location="about:blank"; //将当前窗口跳转置空白页
+}
+  function ck() {
+    console.profile();
+    console.profileEnd();
+    //我们判断一下profiles里面有没有东西，如果有，肯定有人按F12了，没错！！
+    if(console.clear) { console.clear() };
+                        if (typeof console.profiles =="object"){
+    return console.profiles.length > 0;
+                        }
+}
+function hehe(){
+if( (window.console && (console.firebug || console.table && /firebug/i.test(console.table()) )) || (typeof opera == 'object' && typeof opera.postError == 'function' && console.profile.length > 0)){
+  fuckyou();
+}
+if(typeof console.profiles =="object"&&console.profiles.length > 0){
+fuckyou();
+}
+}
+hehe();
+window.onresize = function(){
+if((window.outerHeight-window.innerHeight)>200)
+//判断当前窗口内页高度和窗口高度，如果差值大于200，那么呵呵
+   fuckyou();
+}
+</script>
+</head>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+ 
+ <!-- 头部  -->
+<section class="header"style="margin-top: 0rem;">
+	<header class="aui-bar aui-bar-nav" id="aui-header">
+		<a class="aui-pull-left aui-btn" onclick="back();">
+			<span class="aui-iconfont aui-icon-left"></span>
+		</a>
+		<div class="aui-title">找回密码</div>
+	   	<a href="/" class="aui-pull-right aui-btn" aui-popup-for="top-right" tapmode="">
+		<svg class="icono" aria-hidden="true">
+             <use xlink:href="#icon-imac1"></use>
+        </svg>
+		</a>
+	    <a onclick="openSearch()" class="aui-pull-right aui-btn">
+	       <svg class="icono" aria-hidden="true">
+             <use xlink:href="#icon-search"></use>
+        </svg>
+	    </a>
+	</header>
+</section>
+
+
+
+<section class="col-main">
+		<div class="row">
+
+<div class="layout" id="sign-content" style="padding-bottom:20px;margin-top: 2.2rem;">
+    <section class="m-logo-pc"><span class="c-logo-pc"></span></section>
+	<form id="loginform_web" method="post" action="index.php?m=user-findpasssave.html">
+	<div data-node="loginPanel" class="mod-login" data-user="login" style="display: block;">
+		<!-- 登录信息 登录需要 m-loginReg追加类名称 m-login-->
+		<section class="m-loginReg m-login" data-component="page.login.component.login" data-id="page.login.component.login_25">
+			<div class="input-wrap">
+				<input class="loginReg-input" type="text" placeholder="请输入用户名" id="u_name" name="u_name" data-node="username" data-user-input="username" onblur="check(this)">
+			</div>
+			<div class="input-wrap">
+				<input class="loginReg-input" type="text" placeholder="请输入安全问题" id="u_question" name="u_question"  >
+			</div>
+			<div class="input-wrap">
+				<input class="loginReg-input" type="text" placeholder="请输入安全答案" id="u_answer" name="u_answer"  >
+			</div>
+			<div class="input-wrap">
+				<input class="loginReg-input" type="password" placeholder="请输入新密码" id="u_password" name="u_password"  data-node="password" data-user-input="password" onblur="check(this)">
+			</div>
+			<!-- 错误提示若无内容则只删除，保留容器 -->
+			<div class="error-tip">
+				<span data-node="verifyCodeError" id="verifyCodeError" style="display:none;"></span>
+			</div>
+			<!-- 错误提示若无内容则只删除，保留容器 end-->
+			<div class="btn-wrap">
+				<a href="javascript:void(0)" data-node="loginBtn" data-rseat="608082_signin" id="btnLogin" data-user-btn="login" class="c-btn c-btn-block c-btn-loginReg">提交</a>
+			</div>
+			<div class="reg-pw">
+				<a  href="index.php?m=user-login.html" class="c-pw">登录</a>
+				<a href="index.php?m=user-reg.html" class="c-reg" data-node="toRegister">注册账号</a>
+			</div>
+		</section>
+		<!-- 登录信息 end-->
+	  
+	</div>
+	</form>
+		</div>
+
+
+</div>
+	</section>
+<script type="text/javascript">
+	$('#btnLogin').click(function() {
+	if ($('#u_name').val()  == '') { $("#verifyCodeError").show();$("#verifyCodeError").html("请输入用户名"); $("#u_name").focus(); return false; }
+	if ($('#u_password').val()  == '') { $("#verifyCodeError").show();$("#verifyCodeError").html("请输入密码"); $("#u_password").focus(); return false; }
+	$("#loginform_web").submit();
+});
+function check(o){
+	var value=$(o).val();
+	var id=$(o).attr("id");
+	if(value==""){
+		$("#verifyCodeError").show();
+		if(id=="u_name"){
+		$("#verifyCodeError").html("请输入用户名!");
+		}else if(id=="u_password"){
+		$("#verifyCodeError").html("请输入密码!");
+		}
+	}else{
+	$("#verifyCodeError").hide();
+	$("#verifyCodeError").html("");
+	}
+}
+$(function(){	
+$("body").bind('keyup',function(event) {
+	if(event.keyCode==13){ $('#btnLogin').click(); }
+}); 
+
+});
+</script>
+{foot}
+</body>
+</html>

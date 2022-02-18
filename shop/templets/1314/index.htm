@@ -1,0 +1,53 @@
+{dede:include filename="head.htm"/}
+<div class="content"> 
+  <script type="text/javascript" src="{dede:global.cfg_templets_skin/}/style/myfocus-2.0.4.min.js"></script> 
+  <div id="myFocusa"><!--焦点图盒子-->
+    <div class="pic"><!--图片列表-->
+      <ul>
+        <li><a href="{dede:global.cfg_basehost/}"><img src="{dede:global.cfg_templets_skin/}/images/1-150624141T0T6.jpg"</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="top_right">
+    <div class="top_right_a">
+      <p>置顶广告</p>
+      <a href="http://www.woai.it"><img src="{dede:global.cfg_templets_skin/}/images/index_37.png" width="34" height="13" /></a>
+      <div class="top_right_a_con">
+                <ul>
+                    {dede:channel  row='20'  type ='son'  typeid ='8'  reid ='8'                      }
+                    <li><a href="[field:typelink/]" target="_blank">[field:typename/]</a></li>
+                    {/dede:channel}THANK YOU LIMITED（雅心有限公司）旗下网站，点击前往：<br /><br />
+                  <a href='http://www.雅心.我爱你' target='_blank'>表白网（其中一种样式）</a><br /><br />
+                  <a href='http://www.woai.it' target='_blank'>我爱IT（IT技术分享）</a><br /><br />
+                  <a href='http://www.yaxin.tv' target='_blank'>雅心TV（免费在线观影）</a>
+                  </ul>
+              </div>
+    </div>
+    <div class="top_right_b"><img src="{dede:global.cfg_templets_skin/}/images/index_24.png" width="9" height="131"  style=" float:left;"/> <span> <font>广告位招租（联系邮箱：www@woai.it，QQ：31997-31997）</font>
+      <p>广告位<br />
+         广告位<br />
+         广告位<br />
+         广告位<br />
+         广告位</p>
+      </span> <img src="{dede:global.cfg_templets_skin/}/images/index_28.png" width="9" height="131"  style=" float:right"/> </div>
+  </div>
+  <div class="qingchu"></div>
+  <div class="top_c">
+    <p>购买流程</p>
+    <div class="top_c_con"><font>【选购】选购您所想要购买的商品。<br />
+【咨询】咨询在线客服查询商品信息。<br />
+【交易】确认无误后，付款交易到账发货。</font> </div>
+  </div>
+  <div class="top_d"> <img src="{dede:global.cfg_templets_skin/}/images/index_24.png" width="9" height="131"  style=" float:left;"/> <span> <font>声明：</font>
+  <p>此网店为公爵旗舰店 <font>唯一官方网店</font> （网址：<a href='http://www.晚安.我爱你' target='_blank'>晚安.我爱你</a>）部分商品淘宝同步销售，淘宝搜索店铺：<a href='https://shop140963653.taobao.com' target='_blank'>公爵旗舰店</a><br />公爵旗舰店 创立于 2015年11月11日，于 2016年11月11日 被 雅心有限公司 收购，至此开始由 雅心有限公司 运营<br />雅心有限公司（英文名：THANK YOU LIMITED）于 2016年10月19日 注册于 中国香港（公司编号：2439932）<br />“雅心”为中国大陆第35类、第38类、第42类、第45类TM商标，“雅心有限公司”为第35类TM商标，请勿滥用！<br />雅心有限公司受香港公司法保护，本网站服务器位于香港，受香港版权法保护，如有侵权，视情况追求法律责任</p>
+    </span> <img src="{dede:global.cfg_templets_skin/}/images/index_28.png" width="9" height="131"  style=" float:right"/> </div>
+  <div class="qingchu"></div>
+  <div class="main">
+    <p>主营业务</p>
+    <div class="main_con">
+                  {dede:arclist         row='100'       titlelen='20'  orderby ='id'              }
+                  <font><a href="[field:arcurl/]"><h1>[field:title/]</h1><b></b></a></font>
+                  {/dede:arclist}
+                </div>
+  </div>
+{dede:include filename="footer.htm"/}

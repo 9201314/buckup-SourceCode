@@ -1,0 +1,17 @@
+<div class="header"><div class="header_main"><img src="__TMPL__Public/images/index_03.png" width="56" height="12" /></div></div>
+
+<div class="nav">
+
+       	<?php
+			$effected_id="";
+		  	$filetpl="<a href='\$href' target='\$target'>\$label</a>";
+		  	$foldertpl="<a href='\$href' target='\$target' class='dropdown-toggle' data-toggle='dropdown'>\$label <b class='caret'></b></a>";
+		  	$ul_class="dropdown-menu" ;
+		  	$li_class="" ;
+		  	$style="nav";
+		  	$showlevel=6;
+		  	$dropdown='dropdown';
+		  	echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
+		?>
+
+</div>

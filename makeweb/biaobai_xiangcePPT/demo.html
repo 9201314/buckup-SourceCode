@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+<meta charset="UTF-8">
+<base href="<?php echo $baseurl?>biaobai_xiangcePPT/" />
+
+<title><?php echo $con18?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Heebo:100,900|Open+Sans:300" rel="stylesheet">
+
+<style type="text/css">
+*{ font-family:微软雅黑}
+.slider__slide:nth-child(1) .slider__back, .slider__slide:nth-child(1) .slider__inner {
+	background-image: url(<?php echo $con3?>);
+}
+.slider__slide:nth-child(2) .slider__back, .slider__slide:nth-child(2) .slider__inner {
+	background-image: url(<?php echo $con6?>);
+}
+.slider__slide:nth-child(3) .slider__back, .slider__slide:nth-child(3) .slider__inner {
+	background-image: url(<?php echo $con9?>);
+}
+.slider__slide:nth-child(4) .slider__back, .slider__slide:nth-child(4) .slider__inner {
+	background-image: url(<?php echo $con12?>);
+}
+.slider__slide:nth-child(5) .slider__back, .slider__slide:nth-child(5) .slider__inner {
+	background-image: url(<?php echo $con15?>);
+}
+</style>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<div class="slider">
+  <div class="slider__slide slider__slide--active" data-slide="1">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1><?php echo $con1?><br>
+          <?php echo $con2?></h1>
+        <?php echo $con16?></a> </div>
+    </div>
+  </div>
+  <div class="slider__slide" data-slide="2">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1><?php echo $con4?><br>
+          <?php echo $con5?></h1>
+        <?php echo $con16?></a> </div>
+    </div>
+  </div>
+  <div class="slider__slide" data-slide="3">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1><?php echo $con7?><br>
+          <?php echo $con8?></h1>
+        <?php echo $con16?></a> </div>
+    </div>
+  </div>
+  <div class="slider__slide" data-slide="4">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1><?php echo $con10?><br>
+          <?php echo $con11?></h1>
+        <?php echo $con16?></a> </div>
+    </div>
+  </div>
+  <div class="slider__slide" data-slide="5">
+    <div class="slider__wrap">
+      <div class="slider__back"></div>
+    </div>
+    <div class="slider__inner">
+      <div class="slider__content"> <a class="go-to-next">
+        <h1><?php echo $con13?><br>
+          <?php echo $con14?></h1>
+        <?php echo $con16?></a> </div>
+    </div>
+  </div>
+  <div class="slider__indicators"></div>
+</div>
+<script src='js/jquery.1.7.1.min.js'></script> 
+<script src="js/index.js"></script>
+<audio id="main_audio" autoplay="autoplay" preload="auto" loop>
+	<source src="<?php echo $con17?>" type="audio/mpeg" />
+	
+</audio>
+<?php echo $tongji?>
+</body>
+</html>

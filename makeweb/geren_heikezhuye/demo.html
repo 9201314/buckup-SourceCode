@@ -1,0 +1,144 @@
+﻿<!doctype html>
+<html lang="en">
+ <head>
+ <base href="<?php echo $baseurl?>geren_heikezhuye/" />
+  <meta charset="UTF-8">
+      <link rel="stylesheet" href="css/normalize.css">
+      <link rel="stylesheet" href="css/style.css">
+      
+  <title><?php echo $con1?></title>
+	
+  <style>
+	*{padding:0;margin:0}
+	html{overflow:hidden}
+  </style>
+
+<style>
+img{
+	width: 150px;
+    border-radius: 200px;
+    box-shadow: 0px 0px 40px rgb(214, 6, 34);
+    border: 3px solid #4CC501;
+    -webkit-transition: 0.4s;
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+    -moz-transition: -moz-transform 0.4s ease-out;
+}
+ /* 
+img:hover{
+    transform: rotateZ(360deg);
+    -webkit-transform: rotateZ(360deg);
+    -moz-transform: rotateZ(360deg);
+}*/
+</style>
+
+ </head>
+ <body>
+<div class="div">
+<img style=" width:150px; height:150px;" class="suyibei" src="<?php echo $con2?>">
+
+<!-- 彩色字体 -->
+<h3><font face="Orbitron" style="color:#4B9851;text-shadow: 0 0 0.9em #82BD23,0 0 0.9em 
+Aqua;"><b><?php echo $con3?></b></font>
+<h3><br>
+
+<font face="Orbitron" style="color:#CC0707;text-shadow: 0 0 0.9em #6EC101,0 0 0.9em 
+Yellow;"><b><?php echo $con4?></b></font><br>
+
+<h3><font face="Orbitron" style="color:white;text-shadow: 0 0 0.9em DarkRed,0 0 0.9em 
+DarkRed;"></font><br>
+
+<font face="Orbitron" style="color:Black;text-shadow: 0 0 0.3em aqua,0 0 0.3em 
+aqua;"><b><?php echo $con5?></font></b></font>
+
+<h3><font face="Orbitron" style="color:Black;text-shadow: 0 0 0.3em #CE0303,0 0 0.3em #D2072D; 
+aqua;"><b><?php echo $con6?></font></b></font>
+<br> 
+<script type="text/javascript">
+    function duihua()
+	{
+	alert("<?php echo $con7?>")
+	}
+    </script>
+    <a href="javascript:void(0);" onclick="duihua()"  class="btn btn-secondary" target="_blank"">个人简历</a>
+
+    <a href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $con8?>&site=qq&menu=yes" class="btn btn-syb" target="_blank"">联系我吧</a>
+
+
+
+</div>
+    <!-- 黑客掉落代码 -->
+	<canvas id="canvas" style="background:#111"></canvas>
+
+	<script type="text/javascript">
+		
+		window.onload = function(){
+			//获取画布对象
+			var canvas = document.getElementById("canvas");
+			//获取画布的上下文
+			var context =canvas.getContext("2d");
+			//获取浏览器屏幕的宽度和高度
+			var W = window.innerWidth;
+			var H = window.innerHeight;
+			//设置canvas的宽度和高度
+			canvas.width = W;
+			canvas.height = H;
+			//每个文字的字体大小
+			var fontSize = 16;
+			//计算列
+			var colunms = Math.floor(W /fontSize);	
+			//记录每列文字的y轴坐标
+			var drops = [];
+			//给每一个文字初始化一个起始点的位置
+			for(var i=0;i<colunms;i++){
+				drops.push(0);
+			}
+
+			//运动的文字
+			var str ="javascript html5 canvas";
+			//4:fillText(str,x,y);原理就是去更改y的坐标位置
+			//绘画的函数
+			function draw(){
+				context.fillStyle = "rgba(0,0,0,0.05)";
+				context.fillRect(0,0,W,H);
+				//给字体设置样式
+				context.font = "700 "+fontSize+"px  微软雅黑";
+				//给字体添加颜色
+				context.fillStyle ="#00cc33";//可以rgb,hsl, 标准色，十六进制颜色
+				//写入画布中
+				for(var i=0;i<colunms;i++){
+					var index = Math.floor(Math.random() * str.length);
+					var x = i*fontSize;
+					var y = drops[i] *fontSize;
+					context.fillText(str[index],x,y);
+					//如果要改变时间，肯定就是改变每次他的起点
+					if(y >= canvas.height && Math.random() > 0.99){
+						drops[i] = 0;
+					}
+					drops[i]++;
+				}
+			};
+
+			function randColor(){
+				var r = Math.floor(Math.random() * 256);
+				var g = Math.floor(Math.random() * 256);
+				var b = Math.floor(Math.random() * 256);
+				return "rgb("+r+","+g+","+b+")";
+			}
+
+			draw();
+			setInterval(draw,30);
+		};
+
+	</script> 
+	<!-- 音乐代码 -->
+	<audio autoplay>
+	<source src="<?php echo $con9?>" loop="999" type="audio/mpeg">
+
+	<!-- 红色鼠标  喜欢带走 -->
+	<style type='text/css'>body, a, a:link{cursor:url(http://cur.cursors-4u.net/cursors/cur-2/cur117.cur), default;} a:hover {cursor:url(http://cur.cursors-4u.net/cursors/cur-2/cur116.cur),wait;}</style>
+
+<?php echo $tongji?>
+
+ </body>
+</html>

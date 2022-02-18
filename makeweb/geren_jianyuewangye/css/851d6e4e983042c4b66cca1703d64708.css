@@ -1,0 +1,12 @@
+﻿@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Sans'), local('DroidSans'), url(../fonts/s-biyweupv0v-yrb-cjcic3usbnsvpkopqaur-2r7iu.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Droid Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(../fonts/efpqqyg9gqcrobxxl-krmfer6hm6rms0v1dtxsgir4g.ttf) format('truetype');
+}

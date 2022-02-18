@@ -1,0 +1,43 @@
+body{
+	overflow-x: hidden;
+}
+.goods-list, .goods-list2 {
+	width:100%;
+}
+.main-title {
+    background: #AEDDD8;
+}
+.goods-list .goods-item .price-wrapper .price, .goods-list2 .goods-item .price-wrapper .price {
+    color: #5ABAD6;
+}
+.shoufa-list ul li .price-wrapper .price {
+	    color: #5ABAD6;
+}
+
+#show-top-menu .menu-content .up-menu {
+    border: #AEDDD8 1px solid;
+    color: #AEDDD8;
+}
+.order-nav ul li.cur a {
+    color: #5ABAD6;
+}
+.order-nav ul li.cur {
+    border-bottom: 1px solid #5ABAD6;
+    color: #5ABAD6;
+}
+.ads-list .goods-item .price-wrapper .price {
+    color: #5ABAD6;
+}
+.more-couppon-goods a {
+    border: #5ABAD6 1px solid;
+    color: #5ABAD6;
+}
+.goods-list .goods-item:nth-child(2n), .goods-list2 .goods-item:nth-child(2n) {
+    margin-right: 0.5em;
+    float: right;
+}
+@media only screen and (max-width:339px){
+	.goods-list .goods-item, .goods-list2 .goods-item {
+    width: 47.5%;
+	}
+}

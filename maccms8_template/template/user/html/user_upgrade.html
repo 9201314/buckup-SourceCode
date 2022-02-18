@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<meta name="renderer" content="webkit">
+<meta name="applicable-device" content="pc,mobile">
+<title>升级权限 -{maccms:name}</title>
+<link href="{maccms:path}template/user/css/css.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="{maccms:path}template/user/css/aui.css" />
+<link rel="stylesheet" href="{maccms:path}template/user/css/main.css" />
+<script type="text/javascript" src="{maccms:path}template/user/css/iconfont.js" ></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/home.js" ></script>
+<script type="text/javascript" src="{maccms:path_tpl}js/main.js" ></script>
+<script src="{maccms:path}js/jquery.js"></script>
+<script src="{maccms:path}js/common.js"></script>
+<script>var SitePath='{maccms:path}',SiteAid='{maccms:siteaid}',SiteTid='{maccms:sitetid}',SiteId='{maccms:siteid}';</script>
+<style type="text/css">
+    .icon {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+    .icono {
+     width: 1em; height: 0.8em;
+     font-size: 1.6rem;
+      color:#212121;
+     vertical-align: -0.15em;
+     fill: currentColor;
+     overflow: hidden;
+}
+</style>
+
+</head>
+<body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+ <!-- 头部  -->
+<section class="header"style="margin-top: -2.2rem;">
+	<header class="aui-bar aui-bar-nav" id="aui-header">
+		<a class="aui-pull-left aui-btn" onclick="back();">
+			<span class="aui-iconfont aui-icon-left"></span>
+		</a>
+		<div class="aui-title">升级权限</div>
+	   	<a href="/" class="aui-pull-right aui-btn" aui-popup-for="top-right" tapmode="">
+		<svg class="icono" aria-hidden="true">
+             <use xlink:href="#icon-imac1"></use>
+        </svg>
+		</a>
+	    <a onclick="openSearch()" class="aui-pull-right aui-btn">
+	       <svg class="icono" aria-hidden="true">
+             <use xlink:href="#icon-search"></use>
+        </svg>
+	    </a>
+	</header>
+</section>
+
+
+
+<div id="mainContent"style="margin-top: 2.2rem;">
+	<div class="usercenter-top">
+		<div class="usercenter-bg">
+			<div class="avatar-box">
+				<img class="user-avatar" src="/template/user/images/mrtx.jpg">
+			</div>
+			<p class="user-name">
+				<font color="#424242">{u_name}</font>
+			</p>
+		</div>
+		<div class="usercenter-count">
+			<a class="user-money" href="javascript:void(0)">
+				<p class="count">{u_points}</p>
+				<p class="title">我的积分</p>
+			</a>
+			<a class="user-packet" href="javascript:void(0)">
+				<p class="count">{ug_name}</p>
+				<p class="title">等级</p>
+			</a>
+			<a class="user-ticket" href="javascript:void(0)">
+				<p class="count">{u_flag}</p>
+				<p class="title">计费类型</p>
+			</a>
+		</div>
+	</div>
+	<div class="i-box-cnt" id="i-cnt">
+		<div id="i-profile">
+			<div class="ui-title i-tab-nav-box">
+				<ul class="i-tab-nav fn-clear">
+					<li>
+						<a href="" id="info_1" style="color:#ff6666" onclick="show(1)">永久会员</a></li>
+					<li class="line"></li>
+					
+				</ul>
+			</div>
+			<div id="base_info">
+				<div class="TONGZHI">会员组权限说明：           <br />          ①普通会员可以观看热播电影电视剧
+<br /> ②黄金会员可以观看隐藏福利视频
+<br /> ③<a href="http://m.joeleo.xin/?m=vod-type-id-20.html" style=" color: #ff6666">钻石会员</a>可以观看隐藏特殊视频</div>
+				<div class="ui-form-item">
+					
+				<form action="index.php?m=user-upgradesave-flag-1.html" method="post" name="form3" id="form3">
+						<input type="hidden" name="flag" value="1"/>
+						<label for="nickname" class="ui-label w130">所属会员组：</label> <p class="ui-label-checkbox">{ug_name}</p><br/>
+							
+						<label class="ui-label w130">选择升级至：</label>
+						
+							<select id="u_group" name="u_group">
+								<option value="">请选择会员组</option>
+								<!-- BEGIN row -->
+								<option value="{sel_val}">{sel_name} ({sel_upgrade}积分)</option>
+								<!-- END row -->
+							</select>
+						<br/>
+						<input class="ui-button" type="submit" value="升级" id="btnSave" style="width:180px;border-radius: 1.7rem;background-color: #ff6666;">				 
+					</form>
+					
+						
+							
+								 
+				
+				</div> 
+				 
+			</div>
+			<div class="ui-form" id="update_info" style="display:none;">
+				<br>
+				<div class="TONGZHI">以下为永久会员组升级渠道</div>
+				<div class="ui-form-item">
+					<form action="index.php?m=user-upgradesave-flag-1.html" method="post" name="form3" id="form3">
+						<input type="hidden" name="flag" value="1"/>
+						<label for="nickname" class="ui-label w130">所属会员组：</label> <p class="ui-label-checkbox">{ug_name}</p><br/>
+							
+						<label class="ui-label w130">选择升级至：</label>
+						
+							<select id="u_group" name="u_group">
+								<option value="">请选择会员组</option>
+								<!-- BEGIN row -->
+								<option value="{sel_val}">{sel_name} ({sel_upgrade}积分)</option>
+								<!-- END row -->
+							</select>
+						<br/>
+						<input class="ui-button" type="submit" value="升级" id="btnSave" style="width:180px;border-radius: 1.7rem;background-color: #ff6666;"   href="http://m.joeleo.top/">				 
+					</form>
+				</div> 
+				
+			</div>
+		</div>
+	</div>
+	<script>function show(o) {
+			if (o == 1) {
+				$("#base_info").show();
+				$("#update_info").hide();
+				$("#info_1").css("color", "#ff6666");
+				$("#info_2").css("color", "");
+			} else {
+				$("#base_info").hide();
+				$("#update_info").show();
+				$("#info_1").css("color", "");
+				$("#info_2").css("color", "#ff6666");
+			}
+
+		}
+	</script>
+</div>
+{foot}
+</body>
+</html>

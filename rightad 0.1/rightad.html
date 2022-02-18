@@ -1,0 +1,56 @@
+﻿<style type="text/css">
+*{margin:0;padding:1;list-style-type:none;}
+.fixediv{position:fixed;top:140px;z-index:9999;width:140px;height:216px;background:#ddd;}
+.fixediv img{float:left;}
+.fixediv a.close{display:block;height:30px;line-height:30px;background:#fff;font-size:14px;padding:0 10px;color:#5e5e5e;text-decoration:none;text-align:center;}
+.leftadv{left:0px;}
+.rightadv{right:0px;}
+</style>
+
+<div class="fixediv rightadv">
+	<a href="http://www.xiexie.la" target="_blank"><img src="images/rightad.png" width="140" height="300" alt="买买买" /></a>
+	<a class="close" href="javascript:void(0);">关闭广告</a>
+</div>
+
+<div style="height:0px;"></div>
+
+
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$(".fixediv a").click(function(){
+		
+		$(".fixediv").fadeOut(400);
+		
+	});
+	
+	$(".fixediv").floatadv();
+	
+});
+
+jQuery.fn.floatadv = function(loaded) {
+	var obj = this;
+	body_height = parseInt($(window).height());
+	block_height = parseInt(obj.height());
+	
+	top_position = parseInt((body_height/2) - (block_height/2) + $(window).scrollTop());
+	if (body_height<block_height) { top_position = 0 + $(window).scrollTop(); };
+	
+	if(!loaded) {
+		obj.css({'position': 'absolute'});
+		obj.css({ 'top': top_position });
+		$(window).bind('resize', function() { 
+			obj.floatadv(!loaded);
+		});
+		$(window).bind('scroll', function() { 
+			obj.floatadv(!loaded);
+		});
+	} else {
+		obj.stop();
+		obj.css({'position': 'absolute'});
+		obj.animate({ 'top': top_position }, 400, 'linear');
+	}
+}
+</script>

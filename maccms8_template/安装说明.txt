@@ -1,0 +1,17 @@
+1.安装苹果CMS内核 程序8.x 
+
+下载地址：http://down.maccms.com/8x/maccms8_mfb.zip
+
+
+2.安装程序成功后给模版解压到目录 到后台启用即可
+
+
+3.附带解析接口 和 采集接口 免费的 
+
+
+原版价格太黑了。已破授权免费分享给大家！希望大家多多支持本论坛 
+
+
+演示效果 http://m.joeleo.xin/
+
+原帖http://bbs.maccms.com/forum.php?mod=viewthread&tid=39634

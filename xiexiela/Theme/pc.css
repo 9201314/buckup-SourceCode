@@ -1,0 +1,121 @@
+body #baner{
+	background:url(/Theme/images/nav_bg.png)repeat-x;;
+	width: 100%;
+    position: absolute;
+    left: 0;
+	height: 46px;
+    z-index: 999;
+}
+body #baner #nav .active {
+    background-color: #8DD0C9;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+body #baner #nav .active:hover{
+    background-color: #7FC7C0;
+}
+body #baner #nav a:hover, body #baner #nav a:focus {
+    background-color: #7FC7C0;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+#banner,#dtk_mian{
+    margin-top: 40px;
+}
+body #headNav #header #showList #search input {
+    border: 2px solid #AADBD6;
+}
+body #headNav #header #showList #search button {
+    background-color: #AEDDD8;
+}
+body #headNav #header #showList dl .rg {
+    background-image: url(/Theme/images/baozhang.png);
+}
+body #headNav #header #showList dl .zy {
+    background-image: url(/Theme/images/baozhang.png);
+}
+body #headNav #header #showList dl .qc {
+    background-image: url(/Theme/images/baozhang.png);
+}
+.goods-list ul li .goods-padding .coupon-wrap .price {
+    color: #5DCAC5 !important;
+}
+.goods-list ul li:hover, .goods-list ul li:focus,.pro_detail:hover{
+    border: 1px solid #9FD7E7 !important;
+    box-shadow: 0 0 10px 0 rgba(176, 221, 217, 0.96) !important;
+}
+.divider{
+    border: none !important;
+    color: #5ABAD6 !important;
+    background-color: #ECF7FA !important;
+}
+.detail-wrap .detail-row .detail-col .desc span {
+    color: #A9E2F1 !important;
+}
+#banner .list {
+    background-color: #ECF7FA!important;
+}
+.list fl a{
+	color:#5ABAD6
+}
+.bdshare{
+	display:none!important;
+}
+.color_p{
+	color:#5ABAD6
+}
+
+#content .discount .dis_product .pro_detail {
+    border: 1px solid #ECF7FA!important;
+    background-color: #ECF7FA!important;
+}
+#content .discount .dis_product .pro_detail .pro_intro .pro_title a {
+    color: #5ABAD6!important;
+}
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri {
+    background-color: #FFDED6!important;
+	    color: #ff3366 !important;
+}
+
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri .old-price span {
+    color: #333!important;
+}
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri .old-price p {
+    color: #e81a62!important;
+}
+#content .discount .dis_product .pro_detail .pro_intro .pro_price .out-time {
+    color: #999!important;
+}
+.detail-wrap .detail-row .detail-col a.title span.title {
+    color: #999;
+}
+.detail-wrap .detail-row .detail-col .ehy-disabled, .detail-wrap .detail-row .detail-col .ehy-normal {
+    background: #AADBD6!important;
+}
+.search-wrap img{
+	display:none !important;
+}
+.cat-wrap .cat-list {
+    border-bottom: #ABDCD6 1px solid !important;
+}
+.cat-wrap {
+    border-left: #ADDCD7 1px solid;
+	border-right: #ADDCD7 1px solid;
+}
+.goods-list ul li .padding .coupon-wrap .price {
+    color: #5DCAC5 !important
+}
+#footer{
+	border-top: 3px solid #A7DAD4!important;
+}
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri .go-buy {
+    background: #BDE5EF!important;
+    background: -webkit-gradient(linear, 0 0, right 0, from(#BDE5EF), to(#BDE5EF))!important;
+    background: -moz-linear-gradient(left, #fef490, #fee44d)!important;
+}
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri .go-buy a:before {
+    border-right: 12px solid #BDE5EF!important;
+}
+#content .discount .dis_product .pro_detail .pro_intro .pro_nowPri .go-buy a {
+    color: #5A5A5A!important;
+}
