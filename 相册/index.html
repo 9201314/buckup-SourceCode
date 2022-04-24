@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Polaroid Images with Only CSS3 | Playground from ZURB</title>
+  <script>
+    var categoryId = null;
+  </script>
+  <link href="application.css" media="screen" rel="stylesheet" />
+  <link href="foundicons.css" media="screen" rel="stylesheet" />
+  <script defer src="custom.js"></script>
+</head>
+
+<body class="off-canvas hide-extras antialiased">
+  <section role="main" class="body">
+    <nav class="global-nav top-bar hide-for-small">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="https://zurb.com">ZURB</a></h1>
+        </li>
+        <li class="toggle-topbar"><a href="css3-polaroids.htm#"></a></li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="right">
+          <li><a href="https://zurb.com/about">About</a></li>
+          <li><a href="https://zurb.com/services">Services</a></li>
+          <li><a href="https://zurb.com/blog">Blog</a></li>
+          <li><a class="current" href="https://zurb.com/playground">Sparks</a></li>
+          <li><a href="https://zurb.com/soapbox">News &amp; Events</a></li>
+        </ul>
+      </section>
+    </nav>
+    <style type="text/css">
+      section[role="main"] {
+        background: url(wood.webp) repeat;
+      }
+
+      section[role="main"] p a,
+      li a {
+        color: #7E3200;
+      }
+
+      section[role="main"] p a:hover,
+      li a:hover {
+        color: #461C00;
+      }
+
+      div#sidebarAd.cleanslate {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .CodeRay {
+        background: rgba(255, 255, 255, 0.75);
+      }
+
+      .row {
+        overflow: visible
+      }
+
+      .project-header {
+        margin-bottom: 1em;
+      }
+
+      @media screen and (max-width: 767px) {
+        .polaroids li:nth-child(n+5) {
+          display: none;
+        }
+      }
+
+      ul.polaroids li {
+        display: inline;
+      }
+
+      ul.polaroids a {
+        background: #fff;
+        display: inline;
+        float: left;
+        margin: 0 0 27px 30px;
+        width: auto;
+        padding: 10px 10px 15px;
+        text-align: center;
+        font-family: "Marker Felt", sans-serif;
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+        -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, .25);
+        -webkit-transform: rotate(-2deg);
+        -webkit-transition: -webkit-transform .15s linear;
+        -moz-transform: rotate(-2deg);
+      }
+
+      ul.polaroids li {
+        padding-left: 0;
+      }
+
+      @media screen and (max-width: 768px) {
+        ul.polaroids li a {
+          margin-left: 0;
+        }
+      }
+
+      ul.polaroids img {
+        display: block;
+        width: 190px;
+        margin-bottom: 12px;
+      }
+
+      ul.polaroids a:after {
+        content: attr(title);
+      }
+
+      ul.polaroids li:nth-child(even) a {
+        -webkit-transform: rotate(2deg);
+        -moz-transform: rotate(2deg);
+      }
+
+      ul.polaroids li:nth-child(3n) a {
+        -webkit-transform: none;
+        position: relative;
+        top: -5px;
+        -moz-transform: none;
+      }
+
+      ul.polaroids li:nth-child(5n) a {
+        -webkit-transform: rotate(5deg);
+        position: relative;
+        right: 5px;
+        -moz-transform: rotate(5deg);
+      }
+
+      ul.polaroids li:nth-child(8n) a {
+        position: relative;
+        right: 5px;
+        top: 8px;
+      }
+
+      ul.polaroids li:nth-child(11n) a {
+        position: relative;
+        left: -5px;
+        top: 3px;
+      }
+
+      ul.polaroids li.messy a {
+        margin-top: -400px;
+        position: relative;
+        left: 160px;
+      }
+
+      ul.polaroids li a:hover {
+        -webkit-transform: scale(1.25);
+        -moz-transform: scale(1.25);
+        -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+        -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+        position: relative;
+        z-index: 5;
+      }
+    </style>
+    <div class="row project-header">
+      <div class="large-8 columns">
+        <h1>Polaroids with CSS3</h1>
+        <p class="lead">In this playground adventure, we use some awesome CSS2 and CSS3 to turn an otherwise unassuming
+          list of images into a full-blown set of polaroid pictures. Check out the demo and code snippets below. <a
+            href="https://www.zurb.com/article/305/easily-turn-your-images-into-polaroids-wi">Read the blog post for
+            more info »</a></p>
+        <p class="faded">Note: Demo works best in Safari 4.x and Chrome 5. In Firefox you won't see the enlarging
+          transition.</p>
+      </div>
+      <div class="large-4 columns">
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns" style="overflow: visible">
+        <ul class="polaroids large-block-grid-4 small-block-grid-2">
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3971679981/" title="Roeland!">
+              <img alt="Roeland!"
+                src="https://d33wubrfki0l68.cloudfront.net/7b47ccb12a3b221295a3782149d93410590d1a08/91265/playground/uploads/upload/upload/192/image-01.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3985295842/" title="Discussion">
+              <img alt="Discussion"
+                src="https://d33wubrfki0l68.cloudfront.net/b7711971f006689b3b7e0d5cc14f327375505f82/4cb59/playground/uploads/upload/upload/193/image-02.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3993123611/" title="A Hearty Laugh">
+              <img alt="A Hearty Laugh"
+                src="https://d33wubrfki0l68.cloudfront.net/3f0f245d64264e8ebf4f97afdcabe1d13e640e4b/0e186/playground/uploads/upload/upload/194/image-03.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/4001991326/" title="Evil Matt Coding">
+              <img alt="Evil Matt Coding"
+                src="https://d33wubrfki0l68.cloudfront.net/13bedfebd9ef1d98001d3a8442ab5e7b17998c96/b6b67/playground/uploads/upload/upload/195/image-04.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/4001992350/" title="Amanda Glares...">
+              <img alt="Amanda Glares..."
+                src="https://d33wubrfki0l68.cloudfront.net/fb1d72ab3826fc2f8893724685dbd463fd175405/2bf94/playground/uploads/upload/upload/196/image-05.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/4001229589/" title="Scribble scribble...">
+              <img alt="Scribbles"
+                src="https://d33wubrfki0l68.cloudfront.net/accf50a8a5e4675e3fd947fd16d214a35b9ee94d/2efd4/playground/uploads/upload/upload/197/image-06.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3957026139/" title="The Dougernaut">
+              <img alt="The Dougernaut"
+                src="https://d33wubrfki0l68.cloudfront.net/2289b84d7bd5e6b00c0e111d844713775525f63c/ee010/playground/uploads/upload/upload/198/image-07.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3428777148/" title="I See You!">
+              <img alt="I See You!"
+                src="https://d33wubrfki0l68.cloudfront.net/accca6cffaae5b16a6d748aeb7fd9c6698287a8c/7522c/playground/uploads/upload/upload/199/image-08.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3799720274/" title="Rock Hard Balls">
+              <img alt="Rock Hard Balls"
+                src="https://d33wubrfki0l68.cloudfront.net/76ac7d07367616d577b5378f9bf543dfdf231a12/e3790/playground/uploads/upload/upload/200/image-09.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3799719490/" title="Bocce Ball">
+              <img alt="Bocce Ball"
+                src="https://d33wubrfki0l68.cloudfront.net/d130f0d6946edc9813f48078d798e50fcb68e392/12cbb/playground/uploads/upload/upload/201/image-10.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3888563172/" title='Boris "Tatooine"'>
+              <img alt="Borris &quot;Tatooine&quot;"
+                src="https://d33wubrfki0l68.cloudfront.net/60bb16458cf2869cf897bc6881cb934480a19110/57ad8/playground/uploads/upload/upload/202/image-11.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3427934527/" title="Sneakers &amp; Stilettos">
+              <img alt="Sneakers &amp;amp; Stilettos"
+                src="https://d33wubrfki0l68.cloudfront.net/85a5e60e8ae2bf04195d55994890f286546a4aba/bef13/playground/uploads/upload/upload/203/image-12.jpg" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-7 columns">
+        <h2>How it Works</h2>
+        <p>Through a combination of browser-specific CSS (2 and 3) integration and some basic styling, we've turned
+          regular old images into cool looking polaroid style images&mdash;with no additional markup to show the text.
+        </p>
+        <section>
+          <h3>Using the Title Attribute</h3>
+          <p>Instead of adding additional markup (more headings or paragraphs), we've opted to reuse the content within
+            the <code>title</code> attribute of the surrounding anchor tag. Since it's good practice to use proper title
+            text, and it's really freaking cool to do stuff with just CSS.</p>
+          <div class='css'>
+            <div class="CodeRay">
+              <div class="code">
+                <pre><span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">a</span><span class="pseudo-class">:after</span> {
+  <span class="key">content</span>: <span class="function"><span class="delimiter">attr(</span><span class="content">title</span><span class="delimiter">)</span></span>;
+}</pre>
+              </div>
+            </div>
+          </div>
+          <p><small>Note: this is from the CSS2.1 spec, but browsers haven't implemented it fully. <a
+                href="https://www.w3.org/TR/CSS2/generate.html">Read up on it here</a>. It does, however, work in IE8,
+              FF2+, Safari 3+, Opera, and Chrome)</small></p>
+          <p>We have to use the <code>title</code> attribute for the anchor because the <code>alt</code> attribute isn't
+            fully implemented by Safari or Firefox. This would work in the same way with an <code>img</code> tag once
+            that is integrated.</p>
+        </section>
+        <section>
+          <h3>Adding "Random" Tilts</h3>
+          <p>Safari 4 and Firefox 3.5 both have support for the <code>:nth-child</code> pseudo-selector (this is CSS3).
+            With it, you can programatically select sibling elements that are even, odd, and much more. In this example,
+            we use several options that help give the images a more random looking layout.</p>
+          <div class='css'>
+            <div class="CodeRay">
+              <div class="code">
+                <pre><span class="comment">/* By default, we tilt all our images -2 degrees */</span>
+<span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">a</span> {
+  <span class="key">-webkit-transform</span>: <span class="error">r</span><span class="error">o</span><span class="error">t</span><span class="error">a</span><span class="error">t</span><span class="error">e</span>(<span class="float">-2deg</span>);
+  <span class="key">-moz-transform</span>: <span class="error">r</span><span class="error">o</span><span class="error">t</span><span class="error">a</span><span class="error">t</span><span class="error">e</span>(<span class="float">-2deg</span>);
+}
+
+<span class="comment">/* Rotate all even images 2 degrees */</span>
+<span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">li</span><span class="pseudo-class">:nth-child</span>(<span class="tag">even</span>) <span class="tag">a</span> {
+  <span class="key">-webkit-transform</span>: <span class="error">r</span><span class="error">o</span><span class="error">t</span><span class="error">a</span><span class="error">t</span><span class="error">e</span>(<span class="float">2deg</span>);
+  <span class="key">-moz-transform</span>: <span class="error">r</span><span class="error">o</span><span class="error">t</span><span class="error">a</span><span class="error">t</span><span class="error">e</span>(<span class="float">2deg</span>);
+}
+
+<span class="comment">/* Don't rotate every third image, but offset its position */</span>
+<span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">li</span><span class="pseudo-class">:nth-child</span>(<span class="float">3n</span>) <span class="tag">a</span> {
+  <span class="key">-webkit-transform</span>: <span class="value">none</span>;
+  <span class="key">-moz-transform</span>: <span class="value">none</span>;
+  <span class="key">position</span>: <span class="value">relative</span>;
+  <span class="key">top</span>: <span class="float">-5px</span>;
+}
+
+<span class="comment">/* Rotate every fifth image by 5 degrees and offset it */</span>
+<span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">li</span><span class="pseudo-class">:nth-child</span>(<span class="float">5n</span>) <span class="tag">a</span> {
+  <span class="key">-webkit-transform</span>: <span class="error">r</span><span class="error">o</span><span class="error">t</span><span class="error">a</span><span class="error">t</span><span class="error">e</span>(<span class="float">5deg</span>);
+  <span class="key">-moz-transform</span>: <span class="error">r</span><span class="error">o</span><span class="error">t</span><span class="error">a</span><span class="error">t</span><span class="error">e</span>(<span class="float">5deg</span>);
+  <span class="key">position</span>: <span class="value">relative</span>;
+  <span class="key">right</span>: <span class="float">5px</span>;
+}
+
+<span class="comment">/* Keep default rotate for every eighth, but offset it */</span>
+<span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">li</span><span class="pseudo-class">:nth-child</span>(<span class="float">8n</span>) <span class="tag">a</span> {
+  <span class="key">position</span>: <span class="value">relative</span>;
+  <span class="key">top</span>: <span class="float">8px</span>;
+  <span class="key">right</span>: <span class="float">5px</span>;
+}
+
+<span class="comment">/* Keep default rotate for every eleventh, but offset it */</span>
+<span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">li</span><span class="pseudo-class">:nth-child</span>(<span class="float">11n</span>) <span class="tag">a</span> {
+  <span class="key">position</span>: <span class="value">relative</span>;
+  <span class="key">top</span>: <span class="float">3px</span>;
+  <span class="key">left</span>: <span class="float">-5px</span>;
+}</pre>
+              </div>
+            </div>
+          </div>
+          <p><small>Read about <code>:nth-child</code> and it's usage <a
+                href="https://www.w3.org/TR/css3-selectors/#nth-child-pseudo">here</a>.</small></p>
+          <p>Although this seems like a bit much, this works to our advantage. First, we don't need any additional
+            classes because we can select which ones we want via the <code>:nth-child</code> pseudo-selector. Second, by
+            having so many changes, we get the random appearance in a decent sized gallery.</p>
+        </section>
+        <section>
+          <h3>Making Them Scale</h3>
+          <p>For the scaling, we once again turn to some CSS3. The transform properties we used above can be used to
+            scale our images as well (this if the for hover effect) for a nice hover effect.</p>
+          <div class='css'>
+            <div class="CodeRay">
+              <div class="code">
+                <pre><span class="comment">/* Scale the images on hover, add transitions for smoothing things out, and ensure the hover appears on top */</span>
+<span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">a</span><span class="pseudo-class">:hover</span> {
+  <span class="key">-webkit-transform</span>: <span class="error">s</span><span class="error">c</span><span class="error">a</span><span class="error">l</span><span class="error">e</span>(<span class="float">1.25</span>);
+  <span class="key">-moz-transform</span>: <span class="error">s</span><span class="error">c</span><span class="error">a</span><span class="error">l</span><span class="error">e</span>(<span class="float">1.25</span>);
+  <span class="key">position</span>: <span class="value">relative</span>;
+  <span class="key">z-index</span>: <span class="float">5</span>;
+}</pre>
+              </div>
+            </div>
+          </div>
+          <p>Sweet, now we have our "randomly" rotating images, title text for captions, and some cool hovers to zoom in
+            on the image.</p>
+        </section>
+        <section>
+          <h3>Final Details</h3>
+          <p>Now, we go back and make things as sexy as can be with some more CSS3 goodness. In addition, since Safari
+            supports transitions (they're in the works for Firefox), we can smooth the hover effect by adding just one
+            extra rule.</p>
+          <div class='css'>
+            <div class="CodeRay">
+              <div class="code">
+                <pre><span class="comment">/* Add drop shadows and smooth out the transition (Safari only) */</span>
+<span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">a</span> {
+  <span class="key">-webkit-transition</span>: <span class="value">-webkit-transform</span> <span class="float">.15s</span> <span class="value">linear</span>;
+  <span class="key">-webkit-box-shadow</span>: <span class="float">0</span> <span class="float">3px</span> <span class="float">6px</span> <span class="color">rgba(0,0,0,.25)</span>;
+  <span class="key">-moz-box-shadow</span>: <span class="float">0</span> <span class="float">3px</span> <span class="float">6px</span> <span class="color">rgba(0,0,0,.25)</span>;
+}
+
+<span class="comment">/* On hover, darken the shadows a bit */</span>
+<span class="tag">ul</span><span class="class">.polaroids</span> <span class="tag">a</span> {
+  <span class="key">-webkit-box-shadow</span>: <span class="float">0</span> <span class="float">3px</span> <span class="float">6px</span> <span class="color">rgba(0,0,0,.5)</span>;
+  <span class="key">-moz-box-shadow</span>: <span class="float">0</span> <span class="float">3px</span> <span class="float">6px</span> <span class="color">rgba(0,0,0,.5)</span>;
+}</pre>
+              </div>
+            </div>
+          </div>
+          <p>And with those finer details added, we've created some freaking sweet polaroid style images with nothing
+            more than a list of images and some fancy CSS.</p>
+        </section>
+      </div>
+      <div class="large-5 columns">
+        <ul class="polaroids" style="width: 280px;">
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3976675625/" title="Duckies">
+              <img alt="Duckies"
+                src="https://d33wubrfki0l68.cloudfront.net/a69c5a040cfa4c77dba08bf6233626c74a46460d/c5e0d/playground/uploads/upload/upload/204/image-13.jpg" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.flickr.com/photos/zurbinc/3977439110/" title="Brushed Aluminium">
+              <img alt="Brushed Aluminium"
+                src="https://d33wubrfki0l68.cloudfront.net/d55a9654b20ecc3f64949bf541a5f5a9a15fdc85/86821/playground/uploads/upload/upload/205/image-14.jpg" />
+            </a>
+          </li>
+          <li class="messy">
+            <a href="https://www.flickr.com/photos/zurbinc/3259101017/" title="ZURB Style Guide">
+              <img alt="ZURB Style Guide"
+                src="https://d33wubrfki0l68.cloudfront.net/b1272c553542d68628cb0a55b289a7cdf624a09f/694dc/playground/uploads/upload/upload/206/image-15.jpg" />
+            </a>
+          </li>
+        </ul>
+        <section style="clear: both">
+          <h2>Like what you see here?</h2>
+          <p>Sweet, so do we! You can easily <strong>create a messier overlay style by changing the margins</strong> on
+            your polaroids like we have here. The effects all hold up, but the stack of images looks much more organic.
+          </p>
+        </section>
+        <div class="zurb-jobs">
+          <h4>Score an awesome product engineering or design job</h4>
+          <p class="via">via <a href="https://zurb.com/jobs">Job Board from ZURB</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <p class="faded">Copyright ZURB, freely available for distribution under the MIT license.</p>
+      </div>
+    </div>
+    <section class="project-related">
+      <div>
+        <h2 class="text-center">Check out other Playground experiments</h2>
+        <a href="https://zurb.com/playground/css-grid-examples" class="project-related-item">
+          <div>
+            <img alt="Grid examples thumb"
+              src="https://d33wubrfki0l68.cloudfront.net/e36b2386f26d4a19bf5bfa92eb80acee4368d4e6/825cb/playground/uploads/project/thumb/108/grid-examples-thumb.png" />
+            <h3>Foundation CSS Grid Examples</h3>
+          </div>
+        </a>
+        <a href="https://zurb.com/playground/css-grid-and-container-queries" class="project-related-item">
+          <div>
+            <img alt="Rocket thumb"
+              src="https://d33wubrfki0l68.cloudfront.net/5bec8b8da7f1119ec351831f3d4280ae62789504/5d96d/playground/uploads/project/thumb/109/rocket-thumb.png" />
+            <h3>Foundation CSS Grid + Container Queries</h3>
+          </div>
+        </a>
+        <a href="https://zurb.com/playground/grids-within-grids" class="project-related-item">
+          <div>
+            <img alt="Grids thumb"
+              src="https://d33wubrfki0l68.cloudfront.net/7f3d0ca92eb8f6bc4efc05507f1934007175fcbb/04612/playground/uploads/project/thumb/110/grids-thumb.png" />
+            <h3>Foundation Grids within Grids</h3>
+          </div>
+        </a>
+        <a href="https://zurb.com/playground/reactive-animation-listener" class="project-related-item">
+          <div>
+            <img alt="Bg tile reactive"
+              src="https://d33wubrfki0l68.cloudfront.net/47bc537d168964f8a8d9ad87667601e1d3ead653/4cd80/playground/uploads/project/thumb/107/bg-tile-reactive.png" />
+            <h3>Reactive Animation Listener</h3>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section id="studiosCallout" class="studios">
+      <div class="row expanded">
+        <div class="large-4 medium-4 columns">
+          <img alt="Startup playground"
+            src="https://d33wubrfki0l68.cloudfront.net/a8585bcd17c482a50e448baa4fd0b58819f85810/eff11/playground/assets/startup-playground-e4d9bb8be8d5e8ea0878fb420213e38d.svg" />
+        </div>
+        <div class="large-8 medium-8 columns banner-info">
+          <div class="property-label">ZURB STUDIOS</div>
+          <h3 class="light">Get started with finishing</h3>
+          <p class="lead">Team up with our designers to see how our iterative design process can get your project going.
+            Equipped with our Progressive Design process, visual skills, and the coding chops that brought you
+            Foundation, ZURB Studios is ready to jump in and get your product out to the masses!</p>
+          <div class="course-buttons">
+            <a href="https://zurb.com/studios/getstarted" class="button" data-zcom-event="studios_playground_click"
+              id="playgroundStartupV1">Show Me How &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="zurb-footer-top bg-dgreen">
+      <div class="row property">
+        <div class="large-4 medium-4 columns">
+          <div class="property-info">
+            <h2><a class="home" href="https://zurb.com" title="ZURB">ZURB</a></h2>
+            <p><a href="https://zurb.com/about" target="_blank">ZURB</a> is a product design company since 1998. Through
+              consulting, product design tools and training, we transform the way businesses approach product design.
+            </p>
+          </div>
+        </div>
+        <div class="large-8 medium-8 columns">
+          <div class="row collapse">
+            <div class="large-4 medium-4 columns">
+              <div class="learn-links">
+                <h4>Want more?</h4>
+                <ul>
+                  <li><a href="https://zurb.com/about/">About</a></li>
+                  <li><a href="https://zurb.com/services/our-work">Our Work</a></li>
+                  <li><a href="https://zurb.com/manifesto">Manifesto</a></li>
+                  <li><a href="https://zurb.com/blog">Blog</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="large-4 medium-4 columns">
+              <div class="support-links">
+                <h4>Talk to us</h4>
+                <p>Call us at <strong>(408) 341-0600</strong></p>
+                <p>Not a big talker? Email us at <a href="https://zurb.com/contact"><span class="__cf_email__"
+                      data-cfemail="1572706166617467617071556f6067773b767a78">[email&#160;protected]</span></a></p>
+              </div>
+            </div>
+            <div class="large-4 medium-4 columns">
+              <div class="connect-links">
+                <h4>Stay in touch</h4>
+                <p>Get monthly updates from ZURB in your inbox. Read our <a href="https://zurb.com/news">latest news
+                    &amp; buzz.</a></p>
+                <a href="https://zurb.com/news/signup" class="small button">Get ZURBnews!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="zurb-footer-bottom">
+      <div class="row">
+        <div class="large-4 push-8 columns">
+          <ul class="home-social">
+            <li><a href="https://www.twitter.com/ZURB" class="twitter"></a></li>
+            <li><a href="https://www.facebook.com/ZURB" class="facebook"></a></li>
+            <li><a href="https://zurb.com/contact" class="mail"></a></li>
+          </ul>
+        </div>
+        <div class="large-8 pull-4 columns">
+          <a href="https://zurb.com" class="zurb-logo regular"></a>
+          <ul class="zurb-links">
+            <li><a href="https://zurb.com/about">About</a></li>
+            <li><a href="https://zurb.com/blog">Blog</a></li>
+            <li><a href="https://zurb.com/news">News<span class="show-for-medium-up"> &amp; Events</span></a></li>
+            <li><a href="https://zurb.com/contact">Contact</a></li>
+            <li><a href="https://zurb.com/sitemap">Sitemap</a></li>
+          </ul>
+          <p class="copyright">© 1998–2020 ZURB, Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <div id="loginModal" class="reveal-modal medium" data-reveal>
+      <div class="row">
+        <div class="large-12 columns">
+          <h3>Log in with your ZURB ID</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-7 columns">
+          <a href="https://platform.zurb.com/auth/google_oauth2?origin=http%3A%2F%2Fzurb.com%2Fplayground%2Fauth%2Fzurb%2Fcallback%3Forigin%3Dhttp%3A%2F%2Fzurb.com%2Fplayground%2Fcss3-polaroids&amp;application_id=10"
+            class="button expand google-btn">Log in with Google</a>
+          <div class="login-separator">
+            <span>or</span>
+            <hr>
+          </div>
+          <form accept-charset="UTF-8" action="https://zurb.com/playground/auth/zurb/email" method="post">
+            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input
+                name="authenticity_token" type="hidden" value="q1nXmRnec/3+wYw/tLURVBmn5tC4XkTnbZROWLLE1XE=" /></div>
+            <input id="email" name="email" placeholder="Email" type="text" />
+            <input id="password" name="password" placeholder="Password" type="password" />
+            <button type="submit" class="expand email-btn">Log in with Email</button>
+          </form>
+          <div class="subform-text">
+            <p>Don't have a ZURB ID? <a href="https://zurb.com/playground/css3-polaroids.htm#"
+                data-reveal-id="signupModal">Sign up</a></p>
+            <a href="https://platform.zurb.com/reset_password/new?application_id=10" class="forgot">Forgot password?</a>
+          </div>
+        </div>
+        <div class="large-5 columns hide-for-small">
+          <div class="account-explained">
+            <h4>Your ZURB ID explained</h4>
+            <p>You’ll use your ZURB ID to log in to all of ZURB’s properties — University, Products and Foundation. One
+              account to handle it all.</p>
+            <div class="parts university">
+              <h5>University</h5>
+              <p>Product design resources, courses and training.</p>
+            </div>
+            <div class="parts apps">
+              <h5>Design Apps</h5>
+              <p>Prototype, iterate and collect feedback on your products.</p>
+            </div>
+            <div class="parts foundation">
+              <h5>Foundation</h5>
+              <p>The most advanced front-end framework in the world.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+    <div id="signupModal" class="reveal-modal medium" data-reveal>
+      <div class="row">
+        <div class="large-12 columns">
+          <h3>Sign up for a ZURB ID</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-7 columns">
+          <a href="https://platform.zurb.com/auth/google_oauth2?origin=http%3A%2F%2Fzurb.com%2Fplayground%2Fauth%2Fzurb%2Fcallback%3Forigin%3Dhttp%3A%2F%2Fzurb.com%2Fplayground%2Fcss3-polaroids&amp;application_id=10"
+            class="button expand google-btn">Sign up with Google</a>
+          <div class="login-separator">
+            <span>or</span>
+            <hr>
+          </div>
+          <form accept-charset="UTF-8" action="https://zurb.com/playground/auth/register" method="post">
+            <div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input
+                name="authenticity_token" type="hidden" value="q1nXmRnec/3+wYw/tLURVBmn5tC4XkTnbZROWLLE1XE=" /></div>
+            <input id="name" name="name" placeholder="Name" type="text" />
+            <input id="email" name="email" placeholder="Email" type="text" />
+            <input id="password" name="password" placeholder="Password" type="password" />
+            <button type="submit" class="expand email-btn">Sign up with Email</button>
+          </form>
+          <div class="subform-text">
+            <p>Already have a ZURB ID? <a href="https://zurb.com/playground/css3-polaroids.htm#"
+                data-reveal-id="loginModal">Log in</a></p>
+          </div>
+        </div>
+        <div class="large-5 columns hide-for-small">
+          <div class="account-explained">
+            <h4>Your ZURB ID explained</h4>
+            <p>You’ll use your ZURB ID to log in to all of ZURB’s properties — University, Products and Foundation. One
+              account to handle it all.</p>
+            <div class="parts university">
+              <h5>University</h5>
+              <p>Product design resources, courses and training.</p>
+            </div>
+            <div class="parts apps">
+              <h5>Design Apps</h5>
+              <p>Prototype, iterate and collect feedback on your products.</p>
+            </div>
+            <div class="parts foundation">
+              <h5>Foundation</h5>
+              <p>The most advanced front-end framework in the world.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>
+  </section>
+  <section id="sidebar" role="complementary">
+    <div class="main-menu show-for-small">
+      <h6>ZURB.com</h6>
+      <nav id="sideMenu" role="navigation">
+        <ul id="sideMainNav" class="nav-bar">
+          <li><a href="https://zurb.com/about">About</a></li>
+          <li><a href="https://zurb.com/services">Services</a></li>
+          <li><a href="https://zurb.com/blog">Blog</a></li>
+          <li><a href="https://zurb.com/playground">Sparks</a></li>
+          <li><a href="https://zurb.com/soapbox">News &amp; Events</a></li>
+        </ul>
+      </nav>
+    </div>
+    <hr class="show-for-small">
+    <div class="more-goodness  show-for-small">
+      <h6>More ZURB Goodness</h6>
+      <nav role="navigation">
+        <ul id="sideMainNav" class="nav-bar goodness">
+          <li><a href="https://zurb.com/manifesto">Manifesto</a></li>
+          <li><a href="https://zurb.com/services/our-work">Our Work</a></li>
+          <li><a href="https://zurb.com/university/courses">Product Design Courses</a></li>
+        </ul>
+      </nav>
+    </div>
+    <hr class=" show-for-small">
+    <br>
+    <div class="zurb-links">
+      <ul class="top">
+        <li class="logo"><a href="https://zurb.com"><img alt="Zurb logo t"
+              src="https://d33wubrfki0l68.cloudfront.net/3620f2e633edc79395a26152d726ce2af1acdbca/3ba65/playground/assets/zurb-logo-t-bf307dfc96991d6a48d16b08c5b7a79d.png" /></a>
+        </li>
+        <li><a href="https://zurb.com/about">About</a></li>
+        <li><a href="https://zurb.com/blog">Blog</a></li>
+        <li><a href="https://zurb.com/contact">Contact</a></li>
+      </ul>
+    </div>
+  </section>
+  <script defer src="application.js"></script>
+  <script defer src="jquery.js"></script>
+</body>
+
+</html>
