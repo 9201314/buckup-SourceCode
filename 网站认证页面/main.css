@@ -1,0 +1,301 @@
+@charset "utf-8";
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    font-family: 'Helvetica', 'PingFang SC', '\5FAE\8F6F\96C5\9ED1', sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    -webkit-text-size-adjust: 100%;
+    margin: 0 auto
+}
+
+body,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+select,
+button,
+label {
+    margin: 0;
+    padding: 0
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+ul,
+li {
+    list-style: none
+}
+
+i,
+em {
+    font-style: normal
+}
+
+img {
+    border: 0
+}
+
+.box {
+    width: 938px;
+    padding: 92px 0 50px;
+    margin: 0 auto;
+    text-align: center;
+    background: url(box-bg.jpg) repeat center center;
+    position: relative
+}
+
+.box:before,
+.box:after {
+    content: '';
+    width: 100%;
+    height: 92px;
+    position: absolute;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center center
+}
+
+.box:before {
+    top: 0;
+    background-image: url(border-head.png)
+}
+
+.box:after {
+    bottom: 0;
+    background-image: url(border-foot.png)
+}
+
+.box .con {
+    padding-top: 26px;
+    background: url(border-center.png) repeat-y center center;
+    position: relative
+}
+
+.box .text {
+    min-width: ;
+    padding: 30px 0;
+    margin-top: 20px;
+    line-height: 52px;
+    font-size: 26px;
+    color: #fff;
+    background: url(txt-bg.png) no-repeat center center
+}
+
+.box .title {
+    font-size: 26px;
+    font-weight: bolder
+}
+
+.box .url {
+    display: inline-block;
+    margin: 15px auto;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid #4ca72e;
+    border-left: 0;
+    border-right: 0
+}
+
+/**/
+.box .cate {
+    width: 568px;
+    padding: 10px 0;
+    border: 1px dashed #4ca72e;
+    margin: 0 auto
+}
+
+.box .cate ul {
+    padding-left: 10px
+}
+
+.box .cate li {
+    display: inline-block;
+    width: 105px;
+    height: 30px;
+    margin: 10px 0;
+    line-height: 30px;
+    text-align: left;
+    padding-left: 25px;
+    color: #4ca72e;
+    background: url(hook-on.png) no-repeat left center
+}
+
+.box .cate li.no {
+    background-image: url(hook.png)
+}
+
+.box .cate-txt {
+    padding-bottom: 10px;
+    font-size: 12px
+}
+
+/**/
+.box .result {
+    width: 570px;
+    margin: 0 auto;
+    text-align: left
+}
+
+.box .result h4 {
+    padding: 20px 10px;
+    font-weight: bolder
+}
+
+.box .result p {
+    width: 468px;
+    padding: 40px 50px;
+    border: 1px dashed #4ca72e;
+    position: relative
+}
+
+.box .result p>* {
+    display: inline-block
+}
+
+.box .result span {
+    width: 90px;
+    line-height: 16px
+}
+
+.box .result i {
+    padding-left: 20px;
+    background: url(icon-yes.png) no-repeat left center
+}
+
+.box .result i.error {
+    background-image: url(icon-error.png)
+}
+
+.box .result em {
+    display: inline-block;
+    width: 78px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #ffba00;
+    color: #fff;
+    position: absolute;
+    right: 25px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 2px
+}
+
+.box .result em a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+/**/
+.box .seal {
+    width: 570px;
+    padding-bottom: 100px;
+    margin: 0 auto;
+    text-align: left
+}
+
+.box .seal li {
+    padding: 26px 0 10px;
+    position: relative
+}
+
+.box .seal span {
+    font-size: 12px;
+    color: #999
+}
+
+.box .seal p {
+    padding-top: 18px
+}
+
+.box .seal img {
+    position: absolute;
+    top: 20px;
+    left: 110px
+}
+
+/**/
+.box .score {
+    padding-top: 110px;
+    position: absolute;
+    right: 195px;
+    bottom: 50px
+}
+
+.box .score .circle {
+    width: 106px;
+    height: 106px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: rotate(90deg);
+    border-radius: 50%
+}
+
+.box .score .circle i {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    border: 8px solid #e8e9f0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 50%
+}
+
+.box .score .circle span {
+    display: inline-block;
+    width: 100%;
+    line-height: 90px;
+    font-size: 22px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    transform: rotate(-90deg)
+}
+
+.box .score h4 {
+    padding: 25px 0 10px;
+    font-size: 16px;
+    font-weight: bolder
+}
+
+.box .score p {
+    color: #666
+}
+
+.box .score a {
+    margin-left: 10px;
+    color: #f00;
+    text-decoration: none
+}
